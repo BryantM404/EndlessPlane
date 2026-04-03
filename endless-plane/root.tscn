@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://iocg8ob2bq6v"]
+
+[ext_resource type="PackedScene" uid="uid://dg2c0o33odte0" path="res://background_paris.tscn" id="1_pq8q7"]
+
+[node name="root" type="Node2D" unique_id=1356577732]
+
+[node name="BackgroundParis" parent="." unique_id=369285263 instance=ExtResource("1_pq8q7")]
