@@ -1,1 +1,3 @@
-res://background_paris.tscn
+res://plane_character.tscn
+res://root.tscn
+res://plane_character.gd
