@@ -123,7 +123,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Plane" type="CharacterBody2D" unique_id=990417522]
+[node name="Plane" type="CharacterBody2D" unique_id=990417522 groups=["player"]]
 script = ExtResource("1_2hu4i")
 
 [node name="PlaneCharacter" type="AnimatedSprite2D" parent="." unique_id=201628479]

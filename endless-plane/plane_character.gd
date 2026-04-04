@@ -28,3 +28,5 @@ func _physics_process(delta: float) -> void:
 	$PlaneFireCharacter.play('default')
 
 	move_and_slide()
+	var screen_size = get_viewport_rect().size
+	position.y = clamp(position.y, 0, screen_size.y)

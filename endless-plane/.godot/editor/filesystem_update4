@@ -1,3 +1,6 @@
 res://plane_character.tscn
-res://root.tscn
 res://plane_character.gd
+res://root.tscn
+res://kamikaze.gd
+res://kamikaze.tscn
+res://main.gd

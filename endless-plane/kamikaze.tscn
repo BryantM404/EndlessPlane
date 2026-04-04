@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://drjtrt3icvvkb"]
+
+[ext_resource type="Script" uid="uid://c36u2y0wrjjg8" path="res://kamikaze.gd" id="1_4epsv"]
+[ext_resource type="Texture2D" uid="uid://drbuj2xgk5vv2" path="res://assetpack (BG & Ship)/Bonus (enemies)/explosion-sheet.png" id="2_r2cpw"]
+[ext_resource type="Texture2D" uid="uid://dowqmw8narke5" path="res://assetpack (BG & Ship)/Bonus (enemies)/kamikaze-sheet.png" id="3_eu8ci"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4epsv"]
+radius = 28.0
+height = 212.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt211"]
+atlas = ExtResource("3_eu8ci")
+region = Rect2(0, 0, 226, 103)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skvty"]
+atlas = ExtResource("3_eu8ci")
+region = Rect2(226, 0, 226, 103)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htf58"]
+atlas = ExtResource("3_eu8ci")
+region = Rect2(452, 0, 226, 103)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq0f2"]
+atlas = ExtResource("3_eu8ci")
+region = Rect2(678, 0, 226, 103)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8nnq"]
+atlas = ExtResource("2_r2cpw")
+region = Rect2(0, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xphvm"]
+atlas = ExtResource("2_r2cpw")
+region = Rect2(400, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qra3"]
+atlas = ExtResource("2_r2cpw")
+region = Rect2(800, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk5g1"]
+atlas = ExtResource("2_r2cpw")
+region = Rect2(1200, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vstjb"]
+atlas = ExtResource("2_r2cpw")
+region = Rect2(1600, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wk44c"]
+atlas = ExtResource("2_r2cpw")
+region = Rect2(2000, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7hmv"]
+atlas = ExtResource("2_r2cpw")
+region = Rect2(2400, 0, 400, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xg7lc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kt211")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skvty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htf58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq0f2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8nnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xphvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qra3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk5g1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vstjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wk44c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7hmv")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hyopa"]
+radius = 28.0
+height = 212.0
+
+[node name="Kamikaze" type="CharacterBody2D" unique_id=727809138]
+collision_layer = 2
+script = ExtResource("1_4epsv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1396566859]
+position = Vector2(0, 1.5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_4epsv")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1407729055]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=1644980553]
+sprite_frames = SubResource("SpriteFrames_xg7lc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=686567043]
+position = Vector2(0, 1.5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_hyopa")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
