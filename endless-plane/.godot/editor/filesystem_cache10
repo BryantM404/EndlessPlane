@@ -1,6 +1,11 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1775223020
+::res://::1775271960
+background_paris.tscn::PackedScene::7636300170972733029::1775230653::0::1::::<><><>0<>0<><>::uid://b3tpv1pjrvfoh::::res://assetpack (BG & Ship)/parallax/pariscityparallax/skycolor.png<>uid://ddpgev0t065a1::::res://assetpack (BG & Ship)/parallax/pariscityparallax/skycloud.png<>uid://bpmx8wp02r5eb::::res://assetpack (BG & Ship)/parallax/pariscityparallax/moon.png<>uid://dcpblbd8p8psx::::res://assetpack (BG & Ship)/parallax/pariscityparallax/backhill.png<>uid://xchenl4sqwmh::::res://assetpack (BG & Ship)/parallax/pariscityparallax/backbuilding3.png<>uid://cbholv62nqurx::::res://assetpack (BG & Ship)/parallax/pariscityparallax/backbuilding2.png<>uid://chlgya8wlmrov::::res://assetpack (BG & Ship)/parallax/pariscityparallax/backbuilding1.png<>uid://o6u4346yfw44::::res://assetpack (BG & Ship)/parallax/pariscityparallax/watercolor.png<>uid://bojnn13gf61wu::::res://assetpack (BG & Ship)/parallax/pariscityparallax/eifeltower.png<>uid://bpiohxfbrvqkf::::res://assetpack (BG & Ship)/parallax/pariscityparallax/barge river.png<>uid://sb8bsx2ujbg0::::res://assetpack (BG & Ship)/parallax/pariscityparallax/reflectcloud.png<>uid://c27imcrpjuxev::::res://assetpack (BG & Ship)/parallax/pariscityparallax/reflecteiffeltower.png<>uid://bcublcqj0c5wo::::res://assetpack (BG & Ship)/parallax/pariscityparallax/reflectbuilding.png<>uid://bjifmx2d64erj::::res://assetpack (BG & Ship)/parallax/pariscityparallax/reflectriverbank.png<>uid://d2hclqy8klx4w::::res://assetpack (BG & Ship)/parallax/pariscityparallax/riversidebuilding.png<>uid://cwx7e2ejifops::::res://assetpack (BG & Ship)/parallax/pariscityparallax/riverbankwithpeople.png<>uid://bhyuf6ltsljed::::res://assetpack (BG & Ship)/parallax/pariscityparallax/frontforest.png<>uid://mugd20b7t6yy::::res://camera_2d.gd
+camera_2d.gd::GDScript::883924794915443516::1775229622::0::1::::<>Camera2D<><>0<>0<><>::
+frontforest.gd::GDScript::109554724336969040::1775225085::0::1::::<>Sprite2D<><>0<>0<><>::
 icon.svg::CompressedTexture2D::2652756886728430775::1775222877::1775222881::1::::<><><>0<>0<>f446b229f87555d43e3dd94512af30cd<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+root.tscn::PackedScene::590545941389450187::1775230482::0::1::::<><><>0<>0<><>::uid://dg2c0o33odte0::::res://background_paris.tscn
+trees_background.gd::GDScript::672966941234559614::1775227087::0::1::::<>ParallaxBackground<><>0<>0<><>::
 ::res://assetpack (BG & Ship)/::1775223020
 ::res://assetpack (BG & Ship)/Bonus (enemies)/::1775223023
 enemy-z.png::CompressedTexture2D::6597019264435214401::1775223020::1775223023::1::::<><><>0<>0<>74c3ed8af8e2d694bd5f6fa4af68111a<>res://.godot/imported/enemy-z.png-38b9f70e35fc2a53a96739008fccf849.ctex::
@@ -73,7 +78,7 @@ moon_sky.png::CompressedTexture2D::8769722350977672285::1775223021::1775223023::
 4 ocean back mountain.png::CompressedTexture2D::6522291469629948370::1775223021::1775223023::1::::<><><>0<>0<>265369811ca5804a0b5274747fb02b4e<>res://.godot/imported/4 ocean back mountain.png-c8162a5e184cf3d563191f7b613b0e0d.ctex::
 5 ocean sand.png::CompressedTexture2D::8554355662384849195::1775223021::1775223022::1::::<><><>0<>0<>0ec49a14fd1b953ab7bb39e92f07bf8f<>res://.godot/imported/5 ocean sand.png-121b714c347dd95e0793b4f8670efa67.ctex::
 6 ocean wave.png::CompressedTexture2D::4912008577488960244::1775223021::1775223023::1::::<><><>0<>0<>c8aeb3f9421cd0d5a17bab2772187289<>res://.godot/imported/6 ocean wave.png-d19b7c7bd176cb6bde72f5a35851a36e.ctex::
-::res://assetpack (BG & Ship)/parallax/pariscityparallax/::1775223272
+::res://assetpack (BG & Ship)/parallax/pariscityparallax/::1775223278
 backbuilding1.png::CompressedTexture2D::5287278641150719173::1775223272::1775223278::1::::<><><>0<>0<>2ebaa67bd0e80f3b65ad1258eb1d049d<>res://.godot/imported/backbuilding1.png-bff770c1cb6b37c514a32a4c0991eea8.ctex::
 backbuilding2.png::CompressedTexture2D::4858351689058408601::1775223272::1775223277::1::::<><><>0<>0<>48547d738d30f8dcca28135553b9e26e<>res://.godot/imported/backbuilding2.png-f294a74df71b5efdd55916f74d3ce107.ctex::
 backbuilding3.png::CompressedTexture2D::1618905022446585719::1775223272::1775223277::1::::<><><>0<>0<>b8c9fef3cc3273e406568979beec90c1<>res://.godot/imported/backbuilding3.png-a3d7f89005735c562e8ba105b98e1b8c.ctex::

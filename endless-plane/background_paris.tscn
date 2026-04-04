@@ -77,55 +77,56 @@ position = Vector2(579, 324)
 scale = Vector2(0.20210528, 0.17944446)
 texture = ExtResource("9_q86qi")
 
-[node name="Layer7" type="Parallax2D" parent="." unique_id=1179089095]
+[node name="Layer5" type="Parallax2D" parent="." unique_id=1179089095]
 scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(1152, 0)
 
-[node name="Reflecteiffeltower" type="Sprite2D" parent="Layer7" unique_id=1881749882]
+[node name="Reflecteiffeltower" type="Sprite2D" parent="Layer5" unique_id=1881749882]
 position = Vector2(570.99994, 321.99997)
 scale = Vector2(0.20192981, 0.17833333)
 texture = ExtResource("13_k7ppv")
 
-[node name="Layer5" type="Parallax2D" parent="." unique_id=1150333691]
+[node name="Layer6" type="Parallax2D" parent="." unique_id=1150333691]
 scale = Vector2(0.99999994, 1)
 scroll_scale = Vector2(0.6, 0.6)
 repeat_size = Vector2(1152, 0)
 
-[node name="Riversidebuilding" type="Sprite2D" parent="Layer5" unique_id=1169090227]
+[node name="Riversidebuilding" type="Sprite2D" parent="Layer6" unique_id=1169090227]
 position = Vector2(577.0001, 319)
 scale = Vector2(0.20192984, 0.17833333)
 texture = ExtResource("16_r4fwd")
 
-[node name="Reflectbuilding" type="Sprite2D" parent="Layer5" unique_id=1273044732]
+[node name="Reflectbuilding" type="Sprite2D" parent="Layer6" unique_id=1273044732]
 position = Vector2(577.00024, 323.00012)
 scale = Vector2(0.2012281, 0.17861114)
 texture = ExtResource("14_g8cdc")
 
-[node name="Reflectriverbank" type="Sprite2D" parent="Layer5" unique_id=1703734179]
+[node name="Reflectriverbank" type="Sprite2D" parent="Layer6" unique_id=1703734179]
 position = Vector2(576.25, 326)
 scale = Vector2(0.20131582, 0.17944445)
 texture = ExtResource("15_v0ecc")
 
-[node name="Riverbankwithpeople" type="Sprite2D" parent="Layer5" unique_id=323007952]
+[node name="Riverbankwithpeople" type="Sprite2D" parent="Layer6" unique_id=323007952]
 position = Vector2(576.25, 323.99997)
 scale = Vector2(0.20236845, 0.17944443)
 texture = ExtResource("17_3122q")
 
-[node name="Layer6" type="Parallax2D" parent="." unique_id=868243339]
+[node name="Layer7" type="Parallax2D" parent="." unique_id=868243339]
 scroll_scale = Vector2(0.1, 0.1)
 repeat_size = Vector2(1152, 0)
 
-[node name="BargeRiver" type="Sprite2D" parent="Layer6" unique_id=1498837137]
+[node name="BargeRiver" type="Sprite2D" parent="Layer7" unique_id=1498837137]
 position = Vector2(576, 324.5)
 scale = Vector2(0.2017544, 0.18027775)
 texture = ExtResource("11_vtlkh")
 
-[node name="Reflectcloud" type="Sprite2D" parent="Layer6" unique_id=638274443]
+[node name="Reflectcloud" type="Sprite2D" parent="Layer7" unique_id=638274443]
 position = Vector2(576.5, 365.5)
 scale = Vector2(0.20228069, 0.19916667)
 texture = ExtResource("12_py7aq")
 
 [node name="Layer8" type="Parallax2D" parent="." unique_id=1252407891]
+scroll_scale = Vector2(4, 4)
 repeat_size = Vector2(1152, 0)
 
 [node name="Frontforest" type="Sprite2D" parent="Layer8" unique_id=90168060]
