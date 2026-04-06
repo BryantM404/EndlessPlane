@@ -1,0 +1,14 @@
+ProgressBar
+CanvasLayer
+Timer
+CollisionShape2D
+Area2D
+AnimatedSprite2D
+CharacterBody2D
+Camera2D
+CollisionPolygon2D
+Sprite2D
+AnimationPlayer
+Parallax2D
+ParallaxLayer
+ParallaxBackground

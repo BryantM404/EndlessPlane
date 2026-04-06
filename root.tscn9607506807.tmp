@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://iocg8ob2bq6v"]
+
+[ext_resource type="PackedScene" uid="uid://dg2c0o33odte0" path="res://background_paris.tscn" id="1_pq8q7"]
+[ext_resource type="Script" uid="uid://bprbtf03liedy" path="res://main.gd" id="1_vvh5c"]
+[ext_resource type="PackedScene" uid="uid://drjtrt3icvvkb" path="res://kamikaze.tscn" id="2_28aoi"]
+[ext_resource type="PackedScene" uid="uid://uknvqwsuxrth" path="res://plane_character.tscn" id="2_pyidc"]
+
+[node name="root" type="Node2D" unique_id=1356577732 node_paths=PackedStringArray("spawn_timer")]
+script = ExtResource("1_vvh5c")
+kamikaze_scene = ExtResource("2_28aoi")
+spawn_timer = NodePath("Timer")
+
+[node name="BackgroundParis" parent="." unique_id=369285263 instance=ExtResource("1_pq8q7")]
+
+[node name="Plane" parent="." unique_id=990417522 instance=ExtResource("2_pyidc")]
+position = Vector2(169, 332)
+scale = Vector2(0.5, 0.5)
+
+[node name="Timer" type="Timer" parent="." unique_id=1040835246]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://iocg8ob2bq6v"]
+
+[ext_resource type="PackedScene" uid="uid://dg2c0o33odte0" path="res://background_paris.tscn" id="1_pq8q7"]
+[ext_resource type="Script" uid="uid://bprbtf03liedy" path="res://main.gd" id="1_vvh5c"]
+[ext_resource type="PackedScene" uid="uid://drjtrt3icvvkb" path="res://kamikaze.tscn" id="2_28aoi"]
+[ext_resource type="PackedScene" uid="uid://uknvqwsuxrth" path="res://plane_character.tscn" id="2_pyidc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28aoi"]
+bg_color = Color(0.033526532, 0.69935167, 0.5801007, 1)
+
+[node name="root" type="Node2D" unique_id=1356577732 node_paths=PackedStringArray("spawn_timer")]
+script = ExtResource("1_vvh5c")
+kamikaze_scene = ExtResource("2_28aoi")
+spawn_timer = NodePath("Timer")
+
+[node name="BackgroundParis" parent="." unique_id=369285263 instance=ExtResource("1_pq8q7")]
+
+[node name="Plane" parent="." unique_id=990417522 instance=ExtResource("2_pyidc")]
+position = Vector2(169, 332)
+scale = Vector2(0.5, 0.5)
+
+[node name="Timer" type="Timer" parent="." unique_id=1040835246]
+wait_time = 2.0
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=67239920]
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer" unique_id=828781696 groups=["player"]]
+anchors_preset = -1
+anchor_left = -0.032
+offset_left = 50.864002
+offset_top = 612.0
+offset_right = 168.0
+offset_bottom = 639.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_28aoi")
+step = 1.0
+value = 100.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

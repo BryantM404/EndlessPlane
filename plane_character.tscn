@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://uknvqwsuxrth"]
+
+[ext_resource type="Script" uid="uid://u86te8kngonq" path="res://plane_character.gd" id="1_2hu4i"]
+[ext_resource type="Texture2D" uid="uid://drt7wr57gv54a" path="res://assetpack (BG & Ship)/Bonus (player ship)/sprite_player_spaceship_up_down.png" id="1_q4po3"]
+[ext_resource type="Texture2D" uid="uid://o1ispbfbtbbf" path="res://assetpack (BG & Ship)/Bonus (player ship)/sprite_player_spaceship_exhaust_low.png" id="2_sfd3l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hu4i"]
+atlas = ExtResource("1_q4po3")
+region = Rect2(0, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iio4n"]
+atlas = ExtResource("1_q4po3")
+region = Rect2(350, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8spar"]
+atlas = ExtResource("1_q4po3")
+region = Rect2(700, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke7bx"]
+atlas = ExtResource("1_q4po3")
+region = Rect2(1050, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdklc"]
+atlas = ExtResource("1_q4po3")
+region = Rect2(1400, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgtpy"]
+atlas = ExtResource("1_q4po3")
+region = Rect2(1750, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m10ag"]
+atlas = ExtResource("1_q4po3")
+region = Rect2(2100, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sngw"]
+atlas = ExtResource("1_q4po3")
+region = Rect2(1750, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv8tw"]
+atlas = ExtResource("1_q4po3")
+region = Rect2(1400, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcw1j"]
+atlas = ExtResource("1_q4po3")
+region = Rect2(1050, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oe58v"]
+atlas = ExtResource("1_q4po3")
+region = Rect2(700, 0, 350, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i156o"]
+atlas = ExtResource("1_q4po3")
+region = Rect2(350, 0, 350, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yqctq"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hu4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iio4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8spar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke7bx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdklc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgtpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m10ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sngw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv8tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcw1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oe58v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i156o")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak1b4"]
+atlas = ExtResource("2_sfd3l")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgs3g"]
+atlas = ExtResource("2_sfd3l")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0kd6m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ak1b4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgs3g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Plane" type="CharacterBody2D" unique_id=990417522 groups=["player"]]
+script = ExtResource("1_2hu4i")
+
+[node name="PlaneCharacter" type="AnimatedSprite2D" parent="." unique_id=201628479]
+sprite_frames = SubResource("SpriteFrames_yqctq")
+animation = &"fly"
+frame_progress = 0.52701885
+
+[node name="PlaneFireCharacter" type="AnimatedSprite2D" parent="." unique_id=448901921]
+position = Vector2(-171, 2)
+sprite_frames = SubResource("SpriteFrames_0kd6m")
+frame_progress = 0.62978506
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=440396659 groups=["player"]]
+position = Vector2(0, -2.7916596)
+scale = Vector2(1, 1.1458334)
+polygon = PackedVector2Array(-124, -49, -40.999996, -49.05455, -24, -25, -9, -33, 24, -32, 52, -22, 138, -5, 141, 4, 136, 10, 69, 26, 2, 25, -17, 41, -47, 40, -63, 53, -107, 52, -129, 48, -129, 42, -92, 22, -120, 22, -143, 11, -183, 11, -183, -7, -144, -7, -126, -10, -121, -18, -97, -18, -131.99998, -33.34546)
