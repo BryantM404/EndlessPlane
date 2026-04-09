@@ -4,9 +4,14 @@
 [ext_resource type="Script" uid="uid://bprbtf03liedy" path="res://main.gd" id="1_vvh5c"]
 [ext_resource type="PackedScene" uid="uid://drjtrt3icvvkb" path="res://kamikaze.tscn" id="2_28aoi"]
 [ext_resource type="PackedScene" uid="uid://uknvqwsuxrth" path="res://plane_character.tscn" id="2_pyidc"]
+[ext_resource type="FontFile" uid="uid://bi84s2pjfs27y" path="res://7pxMONOkeychain.ttf" id="5_jnlp7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28aoi"]
 bg_color = Color(0.033526532, 0.69935167, 0.5801007, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l8v81"]
+font = ExtResource("5_jnlp7")
+font_size = 60
 
 [node name="root" type="Node2D" unique_id=1356577732 node_paths=PackedStringArray("spawn_timer")]
 script = ExtResource("1_vvh5c")
@@ -35,5 +40,13 @@ offset_bottom = 639.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_28aoi")
 step = 1.0
 value = 100.0
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=844555556]
+offset_left = 11.0
+offset_top = 2.0
+offset_right = 51.0
+offset_bottom = 42.0
+text = "0"
+label_settings = SubResource("LabelSettings_l8v81")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

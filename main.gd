@@ -3,9 +3,14 @@ extends Node2D
 @export var kamikaze_scene : PackedScene
 @export var spawn_timer : Timer
 @export var margin_y : float = 150.0
+var score = 0
 
 func _ready():
 	spawn_timer.start()
+	
+func _process(delta: float) -> void:
+	score += 200
+	$CanvasLayer/ScoreLabel.text = str(score)
 
 func _on_timer_timeout():
 	spawn_enemy()
