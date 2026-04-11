@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://clcc4dnjm3j7n"]
+
+[ext_resource type="Script" uid="uid://d2n575hoqnwak" path="res://background_opening.gd" id="1_04du7"]
+[ext_resource type="Texture2D" uid="uid://b3tpv1pjrvfoh" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/skycolor.png" id="1_5r6vx"]
+[ext_resource type="Texture2D" uid="uid://ddpgev0t065a1" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/skycloud.png" id="2_04du7"]
+[ext_resource type="PackedScene" uid="uid://iocg8ob2bq6v" path="res://root.tscn" id="2_dfvts"]
+[ext_resource type="Texture2D" uid="uid://dcpblbd8p8psx" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/backhill.png" id="3_dfvts"]
+[ext_resource type="Texture2D" uid="uid://xchenl4sqwmh" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/backbuilding3.png" id="4_ug6w7"]
+[ext_resource type="Texture2D" uid="uid://cbholv62nqurx" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/backbuilding2.png" id="5_oj308"]
+[ext_resource type="Texture2D" uid="uid://chlgya8wlmrov" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/backbuilding1.png" id="6_f2he4"]
+[ext_resource type="Texture2D" uid="uid://bojnn13gf61wu" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/eifeltower.png" id="7_gbsht"]
+[ext_resource type="Texture2D" uid="uid://o6u4346yfw44" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/watercolor.png" id="8_jrol1"]
+[ext_resource type="Texture2D" uid="uid://c27imcrpjuxev" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/reflecteiffeltower.png" id="9_p8ik8"]
+[ext_resource type="Texture2D" uid="uid://d2hclqy8klx4w" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/riversidebuilding.png" id="10_jdog2"]
+[ext_resource type="Texture2D" uid="uid://bcublcqj0c5wo" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/reflectbuilding.png" id="11_1rmjd"]
+[ext_resource type="Texture2D" uid="uid://bjifmx2d64erj" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/reflectriverbank.png" id="12_334sm"]
+[ext_resource type="Texture2D" uid="uid://cwx7e2ejifops" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/riverbankwithpeople.png" id="13_8ykem"]
+[ext_resource type="Texture2D" uid="uid://bpiohxfbrvqkf" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/barge river.png" id="14_sdpq8"]
+[ext_resource type="Texture2D" uid="uid://sb8bsx2ujbg0" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/reflectcloud.png" id="15_oj0vf"]
+[ext_resource type="Texture2D" uid="uid://bhyuf6ltsljed" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/frontforest.png" id="16_q8dew"]
+[ext_resource type="Texture2D" uid="uid://bpmx8wp02r5eb" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/moon.png" id="17_xcqiw"]
+[ext_resource type="Script" uid="uid://mugd20b7t6yy" path="res://camera_2d.gd" id="18_nooks"]
+[ext_resource type="Texture2D" uid="uid://bjp3bnb0qbcmg" path="res://endless_plane_logo_2.svg" id="19_e6e3j"]
+[ext_resource type="Texture2D" uid="uid://dkkrr8tqmevi8" path="res://start_btn.svg" id="20_x286t"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8mi8n"]
+
+[node name="BackgroundOpening" type="Node2D" unique_id=1530802300]
+script = ExtResource("1_04du7")
+game_scene = ExtResource("2_dfvts")
+metadata/_edit_vertical_guides_ = [575.0]
+
+[node name="Layer1" type="Parallax2D" parent="." unique_id=1128981773]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(1152, 0)
+
+[node name="Skycolor" type="Sprite2D" parent="Layer1" unique_id=703304937]
+position = Vector2(576, 324.99997)
+scale = Vector2(0.20210525, 0.17944445)
+texture = ExtResource("1_5r6vx")
+
+[node name="Layer2" type="Parallax2D" parent="." unique_id=1079141897]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1152, 0)
+
+[node name="Skycloud" type="Sprite2D" parent="Layer2" unique_id=395942072]
+position = Vector2(578.75, 324.5)
+scale = Vector2(0.20254384, 0.17972223)
+texture = ExtResource("2_04du7")
+
+[node name="Layer3" type="Parallax2D" parent="." unique_id=473406728]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(1152, 0)
+
+[node name="Backhill" type="Sprite2D" parent="Layer3" unique_id=246796255]
+position = Vector2(576.75, 321.5)
+scale = Vector2(0.20219299, 0.17861111)
+texture = ExtResource("3_dfvts")
+
+[node name="Backbuilding3" type="Sprite2D" parent="Layer3" unique_id=551121360]
+position = Vector2(578.875, 328)
+scale = Vector2(0.20214912, 0.1775)
+texture = ExtResource("4_ug6w7")
+
+[node name="Backbuilding2" type="Sprite2D" parent="Layer3" unique_id=1214813701]
+position = Vector2(577.5, 327)
+scale = Vector2(0.20192984, 0.17944445)
+texture = ExtResource("5_oj308")
+
+[node name="Backbuilding1" type="Sprite2D" parent="Layer3" unique_id=72004676]
+position = Vector2(577, 329)
+scale = Vector2(0.2014912, 0.17861108)
+texture = ExtResource("6_f2he4")
+
+[node name="Eifeltower" type="Sprite2D" parent="Layer3" unique_id=764518192]
+position = Vector2(580.5, 326)
+scale = Vector2(0.20157896, 0.17777778)
+texture = ExtResource("7_gbsht")
+
+[node name="Layer4" type="Parallax2D" parent="." unique_id=659737776]
+scroll_scale = Vector2(0.6, 0.6)
+repeat_size = Vector2(1152, 0)
+
+[node name="Watercolor" type="Sprite2D" parent="Layer4" unique_id=476765596]
+position = Vector2(579, 324)
+scale = Vector2(0.20210528, 0.17944446)
+texture = ExtResource("8_jrol1")
+
+[node name="Layer5" type="Parallax2D" parent="." unique_id=1226106740]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(1152, 0)
+
+[node name="Reflecteiffeltower" type="Sprite2D" parent="Layer5" unique_id=1520353918]
+position = Vector2(570.99994, 321.99997)
+scale = Vector2(0.20192981, 0.17833333)
+texture = ExtResource("9_p8ik8")
+
+[node name="Layer6" type="Parallax2D" parent="." unique_id=819050521]
+scale = Vector2(0.99999994, 1)
+scroll_scale = Vector2(0.6, 0.6)
+repeat_size = Vector2(1152, 0)
+
+[node name="Riversidebuilding" type="Sprite2D" parent="Layer6" unique_id=244572766]
+position = Vector2(577.0001, 319)
+scale = Vector2(0.20192984, 0.17833333)
+texture = ExtResource("10_jdog2")
+
+[node name="Reflectbuilding" type="Sprite2D" parent="Layer6" unique_id=1020428131]
+position = Vector2(577.00024, 323.00012)
+scale = Vector2(0.2012281, 0.17861114)
+texture = ExtResource("11_1rmjd")
+
+[node name="Reflectriverbank" type="Sprite2D" parent="Layer6" unique_id=1133375694]
+position = Vector2(576.25, 326)
+scale = Vector2(0.20131582, 0.17944445)
+texture = ExtResource("12_334sm")
+
+[node name="Riverbankwithpeople" type="Sprite2D" parent="Layer6" unique_id=619721042]
+position = Vector2(576.25, 323.99997)
+scale = Vector2(0.20236845, 0.17944443)
+texture = ExtResource("13_8ykem")
+
+[node name="Layer7" type="Parallax2D" parent="." unique_id=1336273611]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1152, 0)
+
+[node name="BargeRiver" type="Sprite2D" parent="Layer7" unique_id=2028944929]
+position = Vector2(576, 324.5)
+scale = Vector2(0.2017544, 0.18027775)
+texture = ExtResource("14_sdpq8")
+
+[node name="Reflectcloud" type="Sprite2D" parent="Layer7" unique_id=52007143]
+position = Vector2(576.5, 365.5)
+scale = Vector2(0.20228069, 0.19916667)
+texture = ExtResource("15_oj0vf")
+
+[node name="Layer8" type="Parallax2D" parent="." unique_id=1036345814]
+scroll_scale = Vector2(4, 4)
+repeat_size = Vector2(1152, 0)
+
+[node name="Frontforest" type="Sprite2D" parent="Layer8" unique_id=1728569349]
+position = Vector2(576.49994, 317.74994)
+scale = Vector2(0.20263158, 0.18625005)
+texture = ExtResource("16_q8dew")
+
+[node name="Layer9" type="Parallax2D" parent="." unique_id=1933273518]
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(1152, 0)
+
+[node name="Moon" type="Sprite2D" parent="Layer9" unique_id=146800801]
+position = Vector2(580.25006, 327)
+scale = Vector2(0.20236844, 0.17944445)
+texture = ExtResource("17_xcqiw")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=693304070]
+position = Vector2(575, 325)
+script = ExtResource("18_nooks")
+
+[node name="OpeningButton" type="CanvasLayer" parent="." unique_id=1415615463]
+
+[node name="BlurOverlay" type="ColorRect" parent="OpeningButton" unique_id=848781621]
+material = SubResource("CanvasItemMaterial_8mi8n")
+offset_right = 1152.0
+offset_bottom = 650.0
+color = Color(0, 0, 0, 0.49803922)
+metadata/_edit_use_anchors_ = true
+
+[node name="Logo" type="TextureRect" parent="OpeningButton" unique_id=1081885382]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -307.99997
+offset_top = -272.0
+offset_right = 1228.0
+offset_bottom = 752.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("19_e6e3j")
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="StartButton" type="TextureButton" parent="OpeningButton" unique_id=1194274443]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_top = 74.0
+offset_right = 1383.0
+offset_bottom = 1098.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource("20_x286t")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="OpeningButton/StartButton" to="." method="_on_start_button_pressed"]

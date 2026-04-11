@@ -126,5 +126,4 @@ func take_damage():
 		#die()
 
 func die():
-	# Ulangi game saat mati
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://game_over_scene.tscn")

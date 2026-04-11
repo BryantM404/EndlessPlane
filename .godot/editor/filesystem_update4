@@ -1,5 +1,9 @@
-res://main.gd
-res://power_up.tscn
-res://power_up.gd
-res://plane_character.gd
+res://background_paris.tscn
+res://background_opening.gd
+res://background_opening.tscn
 res://root.tscn
+res://game_over_scene.gd
+res://plane_character.gd
+res://plane_character.tscn
+res://game_over_scene.tscn
+res://main.gd
