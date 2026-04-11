@@ -1,9 +1,4 @@
 res://root.tscn
-res://main.gd
-res://Bomb.tscn
 res://bomb.gd
-res://plane_character.tscn
-res://background_paris.tscn
-res://background_forest.tscn
-res://background_opening.tscn
-res://game_over_scene.tscn
+res://kamikaze.gd
+res://plane_character.gd

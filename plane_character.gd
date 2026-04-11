@@ -84,7 +84,7 @@ func _on_shield_timeout():
 	modulate = Color.WHITE # Kembalikan ke warna normal
 	print("DURASI SHIELD HABIS!")
 	
-func take_damage():
+func take_damage(damage_value):
 	if is_shield_active:
 		# SHIELD PECAH, NYAWA AMAN
 		is_shield_active = false
@@ -98,7 +98,7 @@ func take_damage():
 		
 	else:
 		# KENA DAMAGE NORMAL KARENA GAK ADA SHIELD
-		health -= 10.0 
+		health -= damage_value
 		
 		if health_bar:
 			health_bar.value = health

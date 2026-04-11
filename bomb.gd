@@ -19,7 +19,7 @@ func _on_body_entered(body):
 	if body.is_in_group("player") or body.name == "Player":
 		if not is_exploded:
 			if body.has_method("take_damage"):
-				body.take_damage()
+				body.take_damage(5)
 			
 			explode()
 
