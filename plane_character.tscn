@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://u86te8kngonq" path="res://plane_character.gd" id="1_2hu4i"]
 [ext_resource type="Texture2D" uid="uid://drt7wr57gv54a" path="res://assetpack (BG & Ship)/Bonus (player ship)/sprite_player_spaceship_up_down.png" id="1_q4po3"]
-[ext_resource type="PackedScene" uid="uid://u04exjqj7f5o" path="res://game_over_scene.tscn" id="2_iio4n"]
 [ext_resource type="Texture2D" uid="uid://o1ispbfbtbbf" path="res://assetpack (BG & Ship)/Bonus (player ship)/sprite_player_spaceship_exhaust_low.png" id="2_sfd3l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hu4i"]
@@ -126,7 +125,6 @@ animations = [{
 
 [node name="Plane" type="CharacterBody2D" unique_id=990417522 groups=["player"]]
 script = ExtResource("1_2hu4i")
-game_over_scene = ExtResource("2_iio4n")
 
 [node name="PlaneCharacter" type="AnimatedSprite2D" parent="." unique_id=201628479]
 sprite_frames = SubResource("SpriteFrames_yqctq")

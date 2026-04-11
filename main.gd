@@ -2,8 +2,11 @@ extends Node2D
 
 @export var kamikaze_scene : PackedScene
 @export var powerup_scene : PackedScene
+@export var bomb_scene : PackedScene
 @export var spawn_timer : Timer
-@export var margin_y : float = 150.0
+@export var margin_y : float = 40.0
+@export var margin_x_bomb : float = 50.0
+
 var score: float = 0.0
 var score_multiplier: float = 1.0
 var multiplier_timer: Timer
@@ -12,14 +15,16 @@ func _ready():
 	spawn_timer.start()
 	$CanvasLayer/ScoreLabel.text = "0"
 	
+	# Timer untuk durasi Power-Up
 	multiplier_timer = Timer.new()
 	multiplier_timer.one_shot = true
 	multiplier_timer.wait_time = 10.0
 	multiplier_timer.timeout.connect(_on_multiplier_timeout)
 	add_child(multiplier_timer)
 	
+	# Timer untuk munculin Power-Up
 	var powerup_spawner = Timer.new()
-	powerup_spawner.wait_time = 3.0
+	powerup_spawner.wait_time = 15.0 
 	powerup_spawner.autostart = true
 	powerup_spawner.timeout.connect(_on_powerup_spawn)
 	add_child(powerup_spawner)
@@ -36,44 +41,69 @@ func _on_multiplier_timeout():
 	score_multiplier = 1.0
 
 func _on_timer_timeout():
-	spawn_enemy()
+	# Acak: 70% muncul Kamikaze, 30% muncul Bom
+	if randf() > 0.3:
+		spawn_enemy()
+	else:
+		spawn_bomb()
 
 func spawn_enemy():
 	var enemy = kamikaze_scene.instantiate()
 	get_tree().current_scene.add_child(enemy)
 
 	var screen_size = get_viewport_rect().size
+	var player = get_tree().get_first_node_in_group("player")
 	var margin_x = 100 
-	var max_attempts = 15
 	var y_new = 0.0
-	var attempt = 0
-	var found_pos = false
-
-	while attempt < max_attempts:
-		y_new = randf_range(margin_y, screen_size.y - margin_y)
-		var ok = true
 	
-		for k in get_tree().get_nodes_in_group("kamikaze"):
-			if abs(k.global_position.y - y_new) < margin_y:
-				ok = false
-				break
-		
-		if ok:
-			found_pos = true
-			break
-		attempt += 1
+	var batas_bawah_layar = screen_size.y - 35.0 
+	var batas_atas_layar = 35.0 
+
+	if player:
+		if player.global_position.y > (screen_size.y * 0.8):
+			y_new = clamp(player.global_position.y, margin_y, batas_bawah_layar)
+		elif player.global_position.y < (screen_size.y * 0.2):
+			y_new = clamp(player.global_position.y, batas_atas_layar, screen_size.y - margin_y)		
+		else:
+			y_new = randf_range(margin_y, screen_size.y - margin_y)
+	else:
+		y_new = randf_range(margin_y, screen_size.y - margin_y)
 		
 	var spawn_x = get_viewport_transform().affine_inverse().origin.x + screen_size.x + margin_x
-	
 	enemy.global_position = Vector2(spawn_x, y_new)
 	enemy.add_to_group("kamikaze")
+
+func spawn_bomb():
+	if bomb_scene == null: return
 	
+	var bomb = bomb_scene.instantiate()
+	get_tree().current_scene.add_child(bomb)
+	
+	var screen_size = get_viewport_rect().size
+	var camera_x = get_viewport_transform().affine_inverse().origin.x
+	var player = get_tree().get_first_node_in_group("player")
+	
+	var x_new = 0.0
+	var front_gap = 150.0
+	var found_pos = false
+	var attempts = 0
+	
+	while !found_pos and attempts < 15:
+		x_new = randf_range(camera_x + margin_x_bomb, camera_x + screen_size.x - margin_x_bomb)
+		
+		if player:
+			if x_new > (player.global_position.x + front_gap):
+				found_pos = true
+		else:
+			found_pos = true
+		attempts += 1
+
+	bomb.global_position = Vector2(x_new, -100.0) 
+	bomb.z_index = 10
+	bomb.add_to_group("bombs")
+		
 func _on_powerup_spawn():
-	# Cek dulu apakah scene-nya sudah dimasukkan, kalau belum jangan error
-	if powerup_scene == null:
-		print("Error : power up kosong di inspector")
-		return
-	print("Muncul, powerup lagi terbang ke layar")
+	if powerup_scene == null: return
 		
 	var pu = powerup_scene.instantiate()
 	get_tree().current_scene.add_child(pu)
@@ -81,8 +111,11 @@ func _on_powerup_spawn():
 	var screen_size = get_viewport_rect().size
 	var margin_x = 100 
 	
-	# Posisi Y diacak dari atas ke bawah
 	var y_new = randf_range(margin_y, screen_size.y - margin_y)
 	var spawn_x = get_viewport_transform().affine_inverse().origin.x + screen_size.x + margin_x
 	
 	pu.global_position = Vector2(spawn_x, y_new)
+
+func kurangi_skor(jumlah: int):
+	score -= jumlah
+	if score < 0: score = 0

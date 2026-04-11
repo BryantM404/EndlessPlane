@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://dwr82eg52cda1"]
+
+[ext_resource type="Script" uid="uid://djxv11reojd61" path="res://bomb.gd" id="1_lmso4"]
+[ext_resource type="Texture2D" uid="uid://c08v7cvkonjkb" path="res://assetpack (BG & Ship)/Bonus (enemies)/enemy-z.png" id="2_324ho"]
+[ext_resource type="Texture2D" uid="uid://drbuj2xgk5vv2" path="res://assetpack (BG & Ship)/Bonus (enemies)/explosion-sheet.png" id="3_l2lop"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4fkp"]
+atlas = ExtResource("3_l2lop")
+region = Rect2(0, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0dxt"]
+atlas = ExtResource("3_l2lop")
+region = Rect2(400, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o46fc"]
+atlas = ExtResource("3_l2lop")
+region = Rect2(800, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbh3t"]
+atlas = ExtResource("3_l2lop")
+region = Rect2(1200, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p565m"]
+atlas = ExtResource("3_l2lop")
+region = Rect2(1600, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r00rx"]
+atlas = ExtResource("3_l2lop")
+region = Rect2(2000, 0, 400, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouim8"]
+atlas = ExtResource("3_l2lop")
+region = Rect2(2400, 0, 400, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3wi5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_324ho")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4fkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0dxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o46fc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbh3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p565m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r00rx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouim8")
+}],
+"loop": true,
+"name": &"explosion",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_id237"]
+radius = 25.0
+height = 68.0
+
+[node name="bom" type="Area2D" unique_id=1343895107]
+script = ExtResource("1_lmso4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=889914907]
+sprite_frames = SubResource("SpriteFrames_q3wi5")
+animation = &"explosion"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=404046527]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_id237")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=707659175]
+rect = Rect2(-32, -25, 63, 51)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
