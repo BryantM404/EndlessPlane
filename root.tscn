@@ -20,9 +20,9 @@ kamikaze_scene = ExtResource("2_28aoi")
 spawn_timer = NodePath("Timer")
 
 [node name="BackgroundParis" parent="." unique_id=369285263 instance=ExtResource("1_pq8q7")]
-visible = false
 
 [node name="BackgroundForest" parent="." unique_id=341861924 instance=ExtResource("4_l8v81")]
+visible = false
 
 [node name="Plane" parent="." unique_id=990417522 instance=ExtResource("2_pyidc")]
 position = Vector2(169, 332)

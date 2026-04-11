@@ -8,9 +8,9 @@ var score = 0
 func _ready():
 	spawn_timer.start()
 	
-func _process(delta: float) -> void:
-	score += 200
-	$CanvasLayer/ScoreLabel.text = str(score)
+#func _process(delta: float) -> void:
+	#score += 1
+	#$CanvasLayer/ScoreLabel.text = str(score)
 
 func _on_timer_timeout():
 	spawn_enemy()
