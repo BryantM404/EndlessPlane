@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c37cdgqn0ufs4"]
+
+[ext_resource type="Script" uid="uid://skkerje46a7" path="res://power_up.gd" id="1_lbdsv"]
+[ext_resource type="Texture2D" uid="uid://cplpibphhkj2s" path="res://assetpack (BG & Ship)/Bonus (enemies)/powerup.png" id="2_mkoic"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7fad3"]
+
+[node name="PowerUp" type="Area2D" unique_id=152311499]
+z_index = 10
+script = ExtResource("1_lbdsv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1451377650]
+shape = SubResource("CircleShape2D_7fad3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=290926863]
+texture = ExtResource("2_mkoic")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

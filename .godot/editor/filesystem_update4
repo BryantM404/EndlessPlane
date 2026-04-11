@@ -1,2 +1,5 @@
-res://root.tscn
 res://main.gd
+res://power_up.tscn
+res://power_up.gd
+res://plane_character.gd
+res://root.tscn
