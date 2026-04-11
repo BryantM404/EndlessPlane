@@ -8,16 +8,14 @@ var SPEED = 200.0
 func _ready() -> void:
 	var types = [PowerType.SHIELD, PowerType.MULTIPLIER, PowerType.HEAL]
 	my_type = types.pick_random()
-	
-	# (Opsional) Ubah warna agar kamu tahu ini power-up apa
+	#test powerup yang nyala
 	if my_type == PowerType.SHIELD:
-		modulate = Color(0, 0, 1) # Biru untuk Shield
+		modulate = Color(0, 0, 1) # shield
 	elif my_type == PowerType.MULTIPLIER:
-		modulate = Color(1, 1, 0) # Kuning untuk Score x2
+		modulate = Color(1, 1, 0) # score x2
 	elif my_type == PowerType.HEAL:
-		modulate = Color(0, 1, 0) # Hijau untuk Nyawa
+		modulate = Color(0, 1, 0) # nyawa +15
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -27,9 +25,8 @@ func _process(delta: float) -> void:
 		queue_free()
 	pass
 
-
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" or body.is_in_group("player"):
-		body.apply_powerup(my_type) # Beri tahu player power-up apa yang didapat
-		queue_free() # Hapus power-up dari layar
+		body.apply_powerup(my_type) 
+		queue_free() 
 	pass # Replace with function body.

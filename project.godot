@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Endless Plane"
-run/main_scene="uid://clcc4dnjm3j7n"
+run/main_scene="uid://iocg8ob2bq6v"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
