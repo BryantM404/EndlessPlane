@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cdw4efujmk5fh"]
+
+[ext_resource type="Texture2D" uid="uid://dtfe7ujjjghns" path="res://assetpack (BG & Ship)/parallax/forest/forest_sky.png" id="1_juv8g"]
+[ext_resource type="Texture2D" uid="uid://b0g18wx1jjk2g" path="res://assetpack (BG & Ship)/parallax/forest/forest_mountain.png" id="2_dh2q5"]
+[ext_resource type="Texture2D" uid="uid://c6pf5yn5rtupn" path="res://assetpack (BG & Ship)/parallax/forest/forest_moon.png" id="3_3uarc"]
+[ext_resource type="Texture2D" uid="uid://ce7eb7dmoppoq" path="res://assetpack (BG & Ship)/parallax/forest/forest_back.png" id="4_0trxi"]
+[ext_resource type="Texture2D" uid="uid://mxrkp85w5d2h" path="res://assetpack (BG & Ship)/parallax/forest/forest_mid.png" id="5_i8h6p"]
+[ext_resource type="Texture2D" uid="uid://c7cwpiumtv8sa" path="res://assetpack (BG & Ship)/parallax/forest/forest_short.png" id="6_tg28l"]
+
+[node name="BackgroundForest" type="Node2D" unique_id=341861924]
+metadata/_edit_horizontal_guides_ = [647.0]
+metadata/_edit_vertical_guides_ = [1155.0]
+
+[node name="Layer1" type="Parallax2D" parent="." unique_id=713161274]
+scale = Vector2(1.0000001, 1.0000001)
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(1152, 0)
+
+[node name="ForestSky" type="Sprite2D" parent="Layer1" unique_id=868766953]
+position = Vector2(577.5, 322.99997)
+scale = Vector2(0.6078947, 0.5391665)
+texture = ExtResource("1_juv8g")
+
+[node name="Layer2" type="Parallax2D" parent="." unique_id=67885795]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1152, 0)
+
+[node name="ForestMountain" type="Sprite2D" parent="Layer2" unique_id=1518321203]
+position = Vector2(576.5, 321.5)
+scale = Vector2(0.30342108, 0.26625)
+texture = ExtResource("2_dh2q5")
+
+[node name="Layer3" type="Parallax2D" parent="." unique_id=190411955]
+scale = Vector2(0.30342105, 0.26791665)
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(3800, 0)
+
+[node name="ForestMoon" type="Sprite2D" parent="Layer3" unique_id=610070171]
+position = Vector2(1906.5918, 1207.4652)
+scale = Vector2(1, 1.0000001)
+texture = ExtResource("3_3uarc")
+
+[node name="Layer4" type="Parallax2D" parent="." unique_id=826385679]
+scroll_scale = Vector2(0.7, 0.7)
+repeat_size = Vector2(1152, 0)
+
+[node name="ForestBack" type="Sprite2D" parent="Layer4" unique_id=441292830]
+position = Vector2(577.5, 322.5)
+scale = Vector2(0.30394736, 0.2695833)
+texture = ExtResource("4_0trxi")
+
+[node name="Layer5" type="Parallax2D" parent="." unique_id=113544396]
+repeat_size = Vector2(1152, 0)
+
+[node name="ForestMid" type="Sprite2D" parent="Layer5" unique_id=580229709]
+position = Vector2(576.99994, 323.00003)
+scale = Vector2(0.30473685, 0.27)
+texture = ExtResource("5_i8h6p")
+
+[node name="Layer6" type="Parallax2D" parent="." unique_id=1643975963]
+scroll_scale = Vector2(4, 4)
+repeat_size = Vector2(1152, 0)
+
+[node name="ForestShort" type="Sprite2D" parent="Layer6" unique_id=583260878]
+position = Vector2(579, 329)
+scale = Vector2(0.30421054, 0.27166668)
+texture = ExtResource("6_tg28l")
