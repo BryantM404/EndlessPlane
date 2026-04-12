@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cdw4efujmk5fh" path="res://background_forest.tscn" id="4_l8v81"]
 [ext_resource type="FontFile" uid="uid://bi84s2pjfs27y" path="res://7pxMONOkeychain.ttf" id="5_jnlp7"]
 [ext_resource type="PackedScene" uid="uid://4x0jautud0xl" path="res://background_skies.tscn" id="7_huihk"]
+[ext_resource type="PackedScene" uid="uid://cpopl13tjsj8b" path="res://transition.tscn" id="10_tw3kd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28aoi"]
 bg_color = Color(0.033526532, 0.69935167, 0.5801007, 1)
@@ -25,12 +26,15 @@ bomb_scene = ExtResource("4_bf3um")
 spawn_timer = NodePath("Timer")
 
 [node name="BackgroundParis" parent="." unique_id=369285263 instance=ExtResource("1_pq8q7")]
+visible = false
 
 [node name="BackgroundForest" parent="." unique_id=341861924 instance=ExtResource("4_l8v81")]
 visible = false
 
 [node name="BackgroundSkies" parent="." unique_id=1890985120 instance=ExtResource("7_huihk")]
 visible = false
+
+[node name="BackgroundContainer" type="Node2D" parent="." unique_id=36281258]
 
 [node name="Plane" parent="." unique_id=990417522 instance=ExtResource("2_pyidc")]
 position = Vector2(169, 332)
@@ -60,5 +64,9 @@ offset_right = 51.0
 offset_bottom = 42.0
 text = "0"
 label_settings = SubResource("LabelSettings_l8v81")
+
+[node name="Transition" parent="CanvasLayer" unique_id=637614657 instance=ExtResource("10_tw3kd")]
+position = Vector2(499, -46)
+script = null
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -7,6 +7,16 @@ extends Node2D
 @export var margin_y : float = 40.0
 @export var margin_x_bomb : float = 50.0
 
+@onready var bg_container = $BackgroundContainer
+var backgrounds = [
+	preload("res://background_paris.tscn"),
+	preload("res://background_forest.tscn"),
+	preload("res://background_skies.tscn"),
+]
+var current_bg = null
+var bg_state = -1
+var transition_scene = preload("res://transition.tscn")
+
 var score: float = 0.0
 var score_multiplier: float = 1.0
 var multiplier_timer: Timer
@@ -32,6 +42,7 @@ func _ready():
 func _process(delta: float) -> void:
 	score += (200 * score_multiplier) * delta
 	$CanvasLayer/ScoreLabel.text = str(int(score))
+	update_background(score)
 	
 func activate_score_multiplier():
 	score_multiplier = 2.0
@@ -119,3 +130,26 @@ func _on_powerup_spawn():
 func kurangi_skor(jumlah: int):
 	score -= jumlah
 	if score < 0: score = 0
+	
+	
+func change_background(index):
+	if current_bg:
+		current_bg.queue_free()
+	
+	current_bg = backgrounds[index].instantiate()
+	bg_container.add_child(current_bg)
+
+func update_background(score):
+	var new_state = 0
+	if score < 10000:
+		new_state = 0
+	elif score < 20000:
+		new_state = 1
+	else:
+		new_state = 2
+	if new_state != bg_state:
+		bg_state = new_state
+		if new_state != 0:
+			$CanvasLayer/Transition/AnimationPlayer.play("transition")
+			await get_tree().create_timer(0.45).timeout
+		change_background(bg_state)
