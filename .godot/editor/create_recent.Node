@@ -1,15 +1,14 @@
+Parallax2D
+ColorRect
 Node2D
 AnimationPlayer
-Parallax2D
 TextureButton
 TextureRect
 CanvasLayer
 Label
-ColorRect
 ProgressBar
 Timer
 CollisionShape2D
 Area2D
 AnimatedSprite2D
 CharacterBody2D
-Camera2D

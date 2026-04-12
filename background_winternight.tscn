@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://b4wvnxr0spw17"]
+
+[ext_resource type="Texture2D" uid="uid://bwafofuo3x05g" path="res://assetpack (BG & Ship)/parallax/Winternight/4-sky.png" id="1_mf14b"]
+[ext_resource type="Texture2D" uid="uid://bwhlf3llkfpkx" path="res://assetpack (BG & Ship)/parallax/Winternight/3-backmountain.png" id="2_ds7sx"]
+[ext_resource type="Texture2D" uid="uid://c1q1h72c5ornv" path="res://assetpack (BG & Ship)/parallax/Winternight/2-midmountain.png" id="3_b0k7j"]
+[ext_resource type="Texture2D" uid="uid://bka6w7ni8wpj8" path="res://assetpack (BG & Ship)/parallax/Winternight/1-midforest.png" id="4_3xspb"]
+[ext_resource type="Texture2D" uid="uid://u68a70pwabjh" path="res://assetpack (BG & Ship)/parallax/Winternight/0-frontfloor.png" id="5_u3knd"]
+[ext_resource type="Texture2D" uid="uid://bpmx8wp02r5eb" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/moon.png" id="6_to3vb"]
+
+[node name="BackgroundWinternight" type="Node2D" unique_id=1762424430]
+metadata/_edit_vertical_guides_ = [1152.0]
+metadata/_edit_horizontal_guides_ = [648.0]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1717653063]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1152, 0)
+
+[node name="4Sky" type="Sprite2D" parent="Parallax2D" unique_id=1803232400]
+position = Vector2(575.99994, 323.00006)
+scale = Vector2(0.3036842, 0.53999996)
+texture = ExtResource("1_mf14b")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=118472474]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(1152, 0)
+
+[node name="3Backmountain" type="Sprite2D" parent="Parallax2D2" unique_id=52658293]
+position = Vector2(576, 324)
+scale = Vector2(0.3036842, 0.54)
+texture = ExtResource("2_ds7sx")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=265388354]
+scroll_scale = Vector2(0.7, 0.7)
+repeat_size = Vector2(1152, 0)
+
+[node name="2Midmountain" type="Sprite2D" parent="Parallax2D3" unique_id=297446772]
+position = Vector2(576.50006, 318.5)
+scale = Vector2(0.3039474, 0.5258333)
+texture = ExtResource("3_b0k7j")
+
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=1642381185]
+repeat_size = Vector2(1152, 0)
+
+[node name="1Midforest" type="Sprite2D" parent="Parallax2D4" unique_id=1384395035]
+position = Vector2(574.25, 323.75003)
+scale = Vector2(0.30407894, 0.53875005)
+texture = ExtResource("4_3xspb")
+
+[node name="Parallax2D5" type="Parallax2D" parent="." unique_id=1800518623]
+scroll_scale = Vector2(6, 6)
+repeat_size = Vector2(1152, 0)
+
+[node name="0Frontfloor" type="Sprite2D" parent="Parallax2D5" unique_id=1095822586]
+position = Vector2(573.99994, 319)
+scale = Vector2(0.30368418, 0.5466667)
+texture = ExtResource("5_u3knd")
+
+[node name="Parallax2D6" type="Parallax2D" parent="." unique_id=315516022]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1152, 0)
+
+[node name="Moon" type="Sprite2D" parent="Parallax2D6" unique_id=1346261114]
+position = Vector2(578.25, 327)
+scale = Vector2(0.20166667, 0.17944445)
+texture = ExtResource("6_to3vb")

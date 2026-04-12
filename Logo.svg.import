@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjp3bnb0qbcmg"
-path="res://.godot/imported/endless_plane_logo_2.svg-fb49422dc718d79d42ce4d5e652c22cd.ctex"
+uid="uid://c3pnblea8dmoa"
+path="res://.godot/imported/Logo.svg-046ac6190f154403669bdcf47ce5a8af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://endless_plane_logo_2.svg"
-dest_files=["res://.godot/imported/endless_plane_logo_2.svg-fb49422dc718d79d42ce4d5e652c22cd.ctex"]
+source_file="res://Logo.svg"
+dest_files=["res://.godot/imported/Logo.svg-046ac6190f154403669bdcf47ce5a8af.ctex"]
 
 [params]
 

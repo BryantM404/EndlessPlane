@@ -11,6 +11,7 @@ extends Node2D
 var backgrounds = [
 	preload("res://background_paris.tscn"),
 	preload("res://background_forest.tscn"),
+	preload("res://background_winternight.tscn"),
 	preload("res://background_skies.tscn"),
 ]
 var current_bg = null
@@ -21,10 +22,18 @@ var score: float = 0.0
 var score_multiplier: float = 1.0
 var multiplier_timer: Timer
 
+var game_over_scene = preload('res://game_over_scene.tscn')
+#var game_over_ui = null
+
 func _ready():
+	Engine.time_scale = 1
 	spawn_timer.start()
 	$CanvasLayer/ScoreLabel.text = "0"
 	
+	change_background(0)
+	bg_state = 0
+	add_to_group("game")
+		
 	# Timer untuk durasi Power-Up
 	multiplier_timer = Timer.new()
 	multiplier_timer.one_shot = true
@@ -145,11 +154,20 @@ func update_background(score):
 		new_state = 0
 	elif score < 20000:
 		new_state = 1
-	else:
+	elif score < 30000:
 		new_state = 2
+	elif score < 40000:
+		new_state = 3
 	if new_state != bg_state:
 		bg_state = new_state
 		if new_state != 0:
 			$CanvasLayer/Transition/AnimationPlayer.play("transition")
 			await get_tree().create_timer(0.45).timeout
 		change_background(bg_state)
+
+		
+func show_game_over():
+	Engine.time_scale = 0.0001
+	
+	var ui = game_over_scene.instantiate()
+	$CanvasLayer.add_child(ui)

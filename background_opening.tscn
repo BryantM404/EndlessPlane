@@ -20,8 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://bhyuf6ltsljed" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/frontforest.png" id="16_q8dew"]
 [ext_resource type="Texture2D" uid="uid://bpmx8wp02r5eb" path="res://assetpack (BG & Ship)/parallax/pariscityparallax/moon.png" id="17_xcqiw"]
 [ext_resource type="Script" uid="uid://mugd20b7t6yy" path="res://camera_2d.gd" id="18_nooks"]
-[ext_resource type="Texture2D" uid="uid://bjp3bnb0qbcmg" path="res://endless_plane_logo_2.svg" id="19_e6e3j"]
 [ext_resource type="Texture2D" uid="uid://dkkrr8tqmevi8" path="res://start_btn.svg" id="20_x286t"]
+[ext_resource type="Texture2D" uid="uid://c3pnblea8dmoa" path="res://Logo.svg" id="21_dfvts"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8mi8n"]
 
@@ -178,7 +178,7 @@ offset_bottom = 752.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("19_e6e3j")
+texture = ExtResource("21_dfvts")
 stretch_mode = 3
 metadata/_edit_use_anchors_ = true
 
