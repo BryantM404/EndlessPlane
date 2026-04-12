@@ -126,12 +126,12 @@ scale = Vector2(0.20228069, 0.19916667)
 texture = ExtResource("12_py7aq")
 
 [node name="Layer8" type="Parallax2D" parent="." unique_id=1252407891]
-scroll_scale = Vector2(4, 4)
+scroll_scale = Vector2(6, 6)
 repeat_size = Vector2(1152, 0)
 
 [node name="Frontforest" type="Sprite2D" parent="Layer8" unique_id=90168060]
-position = Vector2(576.49994, 317.74994)
-scale = Vector2(0.20263158, 0.18625005)
+position = Vector2(576.49994, 319.74994)
+scale = Vector2(0.20263158, 0.18736117)
 texture = ExtResource("18_pev31")
 
 [node name="Layer9" type="Parallax2D" parent="." unique_id=1188926270]

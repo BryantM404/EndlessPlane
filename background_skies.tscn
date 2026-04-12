@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://4x0jautud0xl"]
+
+[ext_resource type="Texture2D" uid="uid://ceethj4ryjmco" path="res://assetpack (BG & Ship)/parallax/skies/Sky_back_mountain.png" id="1_q3cld"]
+[ext_resource type="Texture2D" uid="uid://0ii4n0mtp6sv" path="res://assetpack (BG & Ship)/parallax/skies/Sky_sky.png" id="1_qwljg"]
+[ext_resource type="Texture2D" uid="uid://c2xmkl14h33a6" path="res://assetpack (BG & Ship)/parallax/skies/sky_moon.png" id="2_exauj"]
+[ext_resource type="Texture2D" uid="uid://d3q3mex602v54" path="res://assetpack (BG & Ship)/parallax/skies/sky_clouds.png" id="2_ihqr6"]
+[ext_resource type="Texture2D" uid="uid://c382jlsyseg03" path="res://assetpack (BG & Ship)/parallax/skies/sky_cloud_floor.png" id="3_ee4ie"]
+[ext_resource type="Texture2D" uid="uid://defk7f8owilhw" path="res://assetpack (BG & Ship)/parallax/skies/sky_cloud_floor_2.png" id="4_x04ei"]
+[ext_resource type="Texture2D" uid="uid://cf0snnwjwcafj" path="res://assetpack (BG & Ship)/parallax/skies/Sky_cloud_single.png" id="5_4mqci"]
+[ext_resource type="Texture2D" uid="uid://ttr13c3bhvwc" path="res://assetpack (BG & Ship)/parallax/skies/sky_front_mountain.png" id="6_4bbpr"]
+[ext_resource type="Texture2D" uid="uid://ih3kdyue57v2" path="res://assetpack (BG & Ship)/parallax/skies/Sky_front_cloud.png" id="9_eqt0k"]
+
+[node name="BackgroundSkies" type="Node2D" unique_id=1890985120]
+metadata/_edit_vertical_guides_ = [1152.0]
+metadata/_edit_horizontal_guides_ = [647.0]
+
+[node name="Layer1" type="Parallax2D" parent="." unique_id=77463959]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1152, 0)
+
+[node name="SkySky" type="Sprite2D" parent="Layer1" unique_id=899548090]
+position = Vector2(577.5, 314)
+scale = Vector2(0.60789466, 0.628)
+texture = ExtResource("1_qwljg")
+
+[node name="Layer2" type="Parallax2D" parent="." unique_id=2074300028]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1152, 0)
+
+[node name="SkyMoon" type="Sprite2D" parent="Layer2" unique_id=1825184591]
+position = Vector2(573, 315)
+scale = Vector2(0.3031579, 0.2766667)
+texture = ExtResource("2_exauj")
+
+[node name="Layer3" type="Parallax2D" parent="." unique_id=255024825]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(1152, 0)
+
+[node name="SkyClouds" type="Sprite2D" parent="Layer3" unique_id=41604134]
+position = Vector2(575, 98.00001)
+scale = Vector2(0.6068421, 0.71500003)
+texture = ExtResource("2_ihqr6")
+
+[node name="Layer4" type="Parallax2D" parent="." unique_id=361196314]
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(1152, 0)
+
+[node name="SkyBackMountain" type="Sprite2D" parent="Layer4" unique_id=837877457]
+position = Vector2(576.5, 323)
+scale = Vector2(0.60473686, 0.64799994)
+texture = ExtResource("1_q3cld")
+
+[node name="Layer5" type="Parallax2D" parent="." unique_id=1425779753]
+scroll_scale = Vector2(1.1, 1.1)
+repeat_size = Vector2(1152, 0)
+
+[node name="SkyCloudSingle" type="Sprite2D" parent="Layer5" unique_id=1839043120]
+position = Vector2(572.5, 320)
+scale = Vector2(0.60473686, 0.642)
+texture = ExtResource("5_4mqci")
+
+[node name="Layer6" type="Parallax2D" parent="." unique_id=2132336481]
+scroll_scale = Vector2(0.9, 0.9)
+repeat_size = Vector2(1152, 0)
+
+[node name="SkyFrontMountain" type="Sprite2D" parent="Layer6" unique_id=1506016737]
+position = Vector2(575, 322.5)
+scale = Vector2(0.6073684, 0.651)
+texture = ExtResource("6_4bbpr")
+
+[node name="Layer7" type="Parallax2D" parent="." unique_id=1237744340]
+scroll_scale = Vector2(8, 8)
+repeat_size = Vector2(1152, 0)
+
+[node name="SkyCloudFloor2" type="Sprite2D" parent="Layer7" unique_id=1522158220]
+position = Vector2(575.5, 322)
+scale = Vector2(0.6068421, 0.65200007)
+texture = ExtResource("4_x04ei")
+
+[node name="SkyCloudFloor" type="Sprite2D" parent="Layer7" unique_id=884626822]
+position = Vector2(578, 305.5)
+scale = Vector2(0.60473686, 0.60699993)
+texture = ExtResource("3_ee4ie")
+
+[node name="SkyFrontCloud" type="Sprite2D" parent="Layer7" unique_id=83505512]
+position = Vector2(574.00006, 407)
+scale = Vector2(0.6068421, 0.58899987)
+texture = ExtResource("9_eqt0k")

@@ -2,3 +2,8 @@ res://root.tscn
 res://bomb.gd
 res://kamikaze.gd
 res://plane_character.gd
+res://background_skies.tscn
+res://background_paris.tscn
+res://background_forest.tscn
+res://background_opening.tscn
+res://plane_character.tscn

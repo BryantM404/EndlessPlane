@@ -1,9 +1,9 @@
+Parallax2D
 TextureButton
 TextureRect
 CanvasLayer
 Label
 ColorRect
-Parallax2D
 ProgressBar
 Timer
 CollisionShape2D

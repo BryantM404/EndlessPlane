@@ -58,7 +58,7 @@ scale = Vector2(0.30473685, 0.27)
 texture = ExtResource("5_i8h6p")
 
 [node name="Layer6" type="Parallax2D" parent="." unique_id=1643975963]
-scroll_scale = Vector2(4, 4)
+scroll_scale = Vector2(6, 6)
 repeat_size = Vector2(1152, 0)
 
 [node name="ForestShort" type="Sprite2D" parent="Layer6" unique_id=583260878]
