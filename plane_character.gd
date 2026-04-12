@@ -85,4 +85,5 @@ func _on_shield_timeout():
 	modulate = Color.WHITE
 
 func die():
-	get_tree().change_scene_to_file("res://game_over_scene.tscn")
+	var game = get_tree().get_first_node_in_group("game")
+	game.show_game_over()

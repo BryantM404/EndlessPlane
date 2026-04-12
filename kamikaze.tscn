@@ -72,25 +72,25 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_w8nnq")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_xphvm")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_3qra3")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_bk5g1")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_vstjb")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_wk44c")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_x7hmv")
 }],
 "loop": false,
@@ -115,6 +115,7 @@ shape = SubResource("CapsuleShape2D_4epsv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=1644980553]
 sprite_frames = SubResource("SpriteFrames_xg7lc")
+animation = &"explosion"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=686567043]
 position = Vector2(0, 1.5)

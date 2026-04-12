@@ -17,7 +17,7 @@ metadata/_edit_vertical_guides_ = [576.0]
 material = SubResource("CanvasItemMaterial_1bya2")
 offset_right = 1152.0
 offset_bottom = 650.0
-color = Color(0, 0, 0, 0.49803922)
+color = Color(0, 0, 0, 0.30588236)
 metadata/_edit_use_anchors_ = true
 
 [node name="GameOver" type="TextureRect" parent="GOButton" unique_id=114134279]

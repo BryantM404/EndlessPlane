@@ -4,6 +4,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Engine.time_scale = 1
 	$OpeningButton/StartButton.pressed.connect(_on_start_button_pressed)
 
 func _on_start_button_pressed():
