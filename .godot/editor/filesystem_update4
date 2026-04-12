@@ -1,8 +1,4 @@
 res://root.tscn
-res://plane_character.tscn
 res://plane_character.gd
-res://Bullet.tscn
-res://bullet.gd
-res://game_over_scene.tscn
-res://game_over_scene.gd
+res://power_up.gd
 res://main.gd

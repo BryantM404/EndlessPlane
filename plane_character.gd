@@ -16,6 +16,8 @@ var shield_timer: Timer
 @onready var ammo_label = get_tree().current_scene.find_child("AmmoLabel", true, false)
 @onready var health_bar = get_tree().current_scene.find_child("HealthBar", true, false)
 
+signal show_powerup_text(text)
+
 func _ready() -> void:
 	if health_bar:
 		health_bar.value = health
@@ -106,18 +108,22 @@ func apply_powerup(type):
 		is_shield_active = true
 		shield_timer.start()
 		modulate = Color(0.5, 0.8, 1.0)
+		emit_signal("show_powerup_text", "SHIELD ACTIVE!")
 	elif type == 1: # SCORE
 		var root_node = get_tree().current_scene
 		if root_node.has_method("activate_score_multiplier"):
 			root_node.activate_score_multiplier()
+		emit_signal("show_powerup_text", "DOUBLE SCORE!")
 	elif type == 2: # HEAL
 		health = min(health + (max_health * 0.15), max_health)
 		if health_bar: health_bar.value = health
 		_flash_effect(Color.GREEN)
-	elif type == 3: 
+		emit_signal("show_powerup_text", "HEAL +15%")
+	elif type == 3: # AMMO
 		ammo = min(ammo + 20, max_ammo) 
 		update_ammo_ui()
-		_flash_effect(Color.RED) 
+		_flash_effect(Color.RED)
+		emit_signal("show_powerup_text", "AMMO +20") 
 
 func _on_shield_timeout():
 	is_shield_active = false

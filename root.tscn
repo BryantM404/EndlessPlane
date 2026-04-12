@@ -6,18 +6,27 @@
 [ext_resource type="PackedScene" uid="uid://uknvqwsuxrth" path="res://plane_character.tscn" id="2_pyidc"]
 [ext_resource type="PackedScene" uid="uid://c37cdgqn0ufs4" path="res://power_up.tscn" id="3_l8v81"]
 [ext_resource type="PackedScene" uid="uid://dwr82eg52cda1" path="res://Bomb.tscn" id="4_bf3um"]
-[ext_resource type="FontFile" uid="uid://bi84s2pjfs27y" path="res://7pxMONOkeychain.ttf" id="5_jnlp7"]
 [ext_resource type="AudioStream" uid="uid://donib7qxxrfbn" path="res://Audio/spaceflight3.wav" id="9_huihk"]
+[ext_resource type="FontFile" uid="uid://bk25lxfcwwf34" path="res://Minecraft.ttf" id="9_tw3kd"]
 [ext_resource type="PackedScene" uid="uid://cpopl13tjsj8b" path="res://transition.tscn" id="10_tw3kd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28aoi"]
 bg_color = Color(0.033526532, 0.69935167, 0.5801007, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_l8v81"]
-font = ExtResource("5_jnlp7")
-font_size = 60
+font = ExtResource("9_tw3kd")
+font_size = 35
 
 [sub_resource type="FontVariation" id="FontVariation_bf3um"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_huihk"]
+font = ExtResource("9_tw3kd")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_gd4vy"]
+font = ExtResource("9_tw3kd")
+font_size = 30
+font_color = Color(1, 1, 0, 1)
 
 [node name="root" type="Node2D" unique_id=1356577732 node_paths=PackedStringArray("spawn_timer")]
 script = ExtResource("1_vvh5c")
@@ -25,6 +34,7 @@ kamikaze_scene = ExtResource("2_28aoi")
 powerup_scene = ExtResource("3_l8v81")
 bomb_scene = ExtResource("4_bf3um")
 spawn_timer = NodePath("Timer")
+metadata/_edit_vertical_guides_ = [572.0]
 
 [node name="BackgroundParis" parent="." unique_id=369285263 instance=ExtResource("1_pq8q7")]
 visible = false
@@ -48,15 +58,16 @@ offset_left = 50.864002
 offset_top = 612.0
 offset_right = 168.0
 offset_bottom = 639.0
+theme_override_fonts/font = ExtResource("9_tw3kd")
 theme_override_styles/fill = SubResource("StyleBoxFlat_28aoi")
 step = 1.0
 value = 100.0
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=844555556]
-offset_left = 11.0
-offset_top = 2.0
-offset_right = 51.0
-offset_bottom = 42.0
+offset_left = 15.0
+offset_top = 16.0
+offset_right = 55.0
+offset_bottom = 56.0
 text = "0"
 label_settings = SubResource("LabelSettings_l8v81")
 
@@ -64,15 +75,27 @@ label_settings = SubResource("LabelSettings_l8v81")
 position = Vector2(499, -46)
 
 [node name="AmmoLabel" type="Label" parent="CanvasLayer" unique_id=1784211750]
-offset_left = 1020.0
-offset_top = 612.0
-offset_right = 1100.0
-offset_bottom = 635.0
+offset_left = 985.0
+offset_top = 614.0
+offset_right = 1065.0
+offset_bottom = 637.0
 theme_override_fonts/font = SubResource("FontVariation_bf3um")
+label_settings = SubResource("LabelSettings_huihk")
 horizontal_alignment = 1
+
+[node name="InfoLabel" type="Label" parent="CanvasLayer" unique_id=554923783]
+visible = false
+offset_left = 504.0
+offset_top = 607.0
+offset_right = 585.0
+offset_bottom = 638.0
+text = "Test"
+label_settings = SubResource("LabelSettings_gd4vy")
 
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=805736134]
 stream = ExtResource("9_huihk")
+volume_db = -11.287
 autoplay = true
 
+[connection signal="show_powerup_text" from="Plane" to="." method="_on_plane_show_powerup_text"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

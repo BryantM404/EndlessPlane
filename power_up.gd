@@ -16,7 +16,7 @@ func _ready() -> void:
 	elif my_type == PowerType.HEAL:
 		modulate = Color(0, 1, 0) # nyawa +15
 	elif my_type == PowerType.AMMO:
-		modulate = Color(1, 0, 0)    # MERAH (Sesuai permintaanmu)
+		modulate = Color(1, 0, 0)    # MERAH
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

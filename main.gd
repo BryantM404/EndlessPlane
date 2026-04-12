@@ -49,6 +49,7 @@ func _ready():
 	powerup_spawner.timeout.connect(_on_powerup_spawn)
 	add_child(powerup_spawner)
 	
+	
 func _process(delta: float) -> void:
 	score += (200 * score_multiplier) * delta
 	$CanvasLayer/ScoreLabel.text = str(int(score))
@@ -178,3 +179,10 @@ func show_game_over():
 	
 	var ui = game_over_scene.instantiate()
 	$CanvasLayer.add_child(ui)
+
+
+func _on_plane_show_powerup_text(text: Variant) -> void:
+	$CanvasLayer/InfoLabel.text = text
+	$CanvasLayer/InfoLabel.show()
+	await get_tree().create_timer(2.0).timeout
+	$CanvasLayer/InfoLabel.hide()
