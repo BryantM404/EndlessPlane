@@ -1,4 +1,7 @@
-res://transition.tscn
 res://root.tscn
+res://plane_character.tscn
 res://main.gd
-res://transition.gd
+res://plane_character.gd
+res://Bomb.tscn
+res://Bullet.tscn
+res://kamikaze.gd

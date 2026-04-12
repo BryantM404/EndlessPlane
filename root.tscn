@@ -67,6 +67,5 @@ label_settings = SubResource("LabelSettings_l8v81")
 
 [node name="Transition" parent="CanvasLayer" unique_id=637614657 instance=ExtResource("10_tw3kd")]
 position = Vector2(499, -46)
-script = null
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

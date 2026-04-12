@@ -52,7 +52,6 @@ func _on_multiplier_timeout():
 	score_multiplier = 1.0
 
 func _on_timer_timeout():
-	# Acak: 70% muncul Kamikaze, 30% muncul Bom
 	if randf() > 0.3:
 		spawn_enemy()
 	else:

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://u86te8kngonq" path="res://plane_character.gd" id="1_2hu4i"]
 [ext_resource type="Texture2D" uid="uid://drt7wr57gv54a" path="res://assetpack (BG & Ship)/Bonus (player ship)/sprite_player_spaceship_up_down.png" id="1_q4po3"]
+[ext_resource type="PackedScene" uid="uid://dh27twfaiyo4j" path="res://Bullet.tscn" id="2_iio4n"]
 [ext_resource type="Texture2D" uid="uid://o1ispbfbtbbf" path="res://assetpack (BG & Ship)/Bonus (player ship)/sprite_player_spaceship_exhaust_low.png" id="2_sfd3l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hu4i"]
@@ -125,6 +126,7 @@ animations = [{
 
 [node name="Plane" type="CharacterBody2D" unique_id=990417522 groups=["player"]]
 script = ExtResource("1_2hu4i")
+bullet_scene = ExtResource("2_iio4n")
 
 [node name="PlaneCharacter" type="AnimatedSprite2D" parent="." unique_id=201628479]
 sprite_frames = SubResource("SpriteFrames_yqctq")
@@ -140,3 +142,6 @@ frame_progress = 0.62978506
 position = Vector2(0, -2.7916596)
 scale = Vector2(1, 1.1458334)
 polygon = PackedVector2Array(-124, -49, -40.999996, -49.05455, -24, -25, -9, -33, 24, -32, 52, -22, 138, -5, 141, 4, 136, 10, 69, 26, 2, 25, -17, 41, -47, 40, -63, 53, -107, 52, -129, 48, -129, 42, -92, 22, -120, 22, -143, 11, -183, 11, -183, -7, -144, -7, -126, -10, -121, -18, -97, -18, -131.99998, -33.34546)
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=2122304801]
+position = Vector2(300, 10)

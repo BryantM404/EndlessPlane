@@ -36,8 +36,6 @@ func _on_area_2d_body_entered(body: Node2D):
 			body.take_damage(10)
 		explode()
 		
-		
-
 func explode():
 	if exploded:
 		return
