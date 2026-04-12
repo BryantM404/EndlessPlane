@@ -3,6 +3,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
+	$GameoverSound.play()
 	$GOButton/HomeButton.pressed.connect(_on_home_button_pressed)
 	$GOButton/RetryButton.pressed.connect(_on_retry_button_pressed)
 

@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://drt7wr57gv54a" path="res://assetpack (BG & Ship)/Bonus (player ship)/sprite_player_spaceship_up_down.png" id="1_q4po3"]
 [ext_resource type="PackedScene" uid="uid://dh27twfaiyo4j" path="res://Bullet.tscn" id="2_iio4n"]
 [ext_resource type="Texture2D" uid="uid://o1ispbfbtbbf" path="res://assetpack (BG & Ship)/Bonus (player ship)/sprite_player_spaceship_exhaust_low.png" id="2_sfd3l"]
+[ext_resource type="AudioStream" uid="uid://cgak06wx5ho3i" path="res://Audio/powerup.mp3" id="5_8spar"]
+[ext_resource type="AudioStream" uid="uid://gwmke5y52xko" path="res://Audio/ledakan.mp3" id="6_ke7bx"]
+[ext_resource type="AudioStream" uid="uid://ddqx05fsl0ix" path="res://Audio/tembakan pesawat.mp3" id="7_qdklc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hu4i"]
 atlas = ExtResource("1_q4po3")
@@ -145,3 +148,14 @@ polygon = PackedVector2Array(-124, -49, -40.999996, -49.05455, -24, -25, -9, -33
 
 [node name="Muzzle" type="Marker2D" parent="." unique_id=2122304801]
 position = Vector2(300, 10)
+
+[node name="PowerupSound" type="AudioStreamPlayer" parent="." unique_id=898655970]
+stream = ExtResource("5_8spar")
+volume_db = -5.0
+
+[node name="HitSound" type="AudioStreamPlayer" parent="." unique_id=2065932426]
+stream = ExtResource("6_ke7bx")
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="." unique_id=266808263]
+stream = ExtResource("7_qdklc")
+volume_db = -10.0

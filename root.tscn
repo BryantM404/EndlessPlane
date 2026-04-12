@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c37cdgqn0ufs4" path="res://power_up.tscn" id="3_l8v81"]
 [ext_resource type="PackedScene" uid="uid://dwr82eg52cda1" path="res://Bomb.tscn" id="4_bf3um"]
 [ext_resource type="FontFile" uid="uid://bi84s2pjfs27y" path="res://7pxMONOkeychain.ttf" id="5_jnlp7"]
+[ext_resource type="AudioStream" uid="uid://donib7qxxrfbn" path="res://Audio/spaceflight3.wav" id="9_huihk"]
 [ext_resource type="PackedScene" uid="uid://cpopl13tjsj8b" path="res://transition.tscn" id="10_tw3kd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28aoi"]
@@ -69,5 +70,9 @@ offset_right = 1100.0
 offset_bottom = 635.0
 theme_override_fonts/font = SubResource("FontVariation_bf3um")
 horizontal_alignment = 1
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=805736134]
+stream = ExtResource("9_huihk")
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

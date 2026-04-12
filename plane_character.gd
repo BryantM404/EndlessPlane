@@ -48,6 +48,7 @@ func _physics_process(_delta: float) -> void:
 func shoot():
 	# Cek apakah masih punya peluru
 	if ammo > 0 and bullet_scene:
+		$ShootSound.play()
 		var bullet = bullet_scene.instantiate()
 	
 		if has_node("Muzzle"):
@@ -82,6 +83,7 @@ func update_ammo_ui():
 			ammo_label.add_theme_color_override("font_color", warna_baru)
 		
 func take_damage(damage_value):
+	$HitSound.play()
 	if is_shield_active:
 		is_shield_active = false
 		shield_timer.stop()
@@ -99,6 +101,7 @@ func _flash_effect(flash_color: Color):
 	get_tree().create_timer(0.1).timeout.connect(func(): modulate = Color.WHITE)
 
 func apply_powerup(type):
+	$PowerupSound.play()
 	if type == 0: # SHIELD
 		is_shield_active = true
 		shield_timer.start()

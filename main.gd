@@ -172,6 +172,8 @@ func update_background(score):
 
 		
 func show_game_over():
+	if has_node("BGMPlayer"):
+		$BGMPlayer.stop()
 	Engine.time_scale = 0.0001
 	
 	var ui = game_over_scene.instantiate()

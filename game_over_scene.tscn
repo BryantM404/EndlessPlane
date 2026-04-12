@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dhtwnw584xjae" path="res://game_over_scene.gd" id="1_rx2wj"]
 [ext_resource type="Texture2D" uid="uid://crho5k5h12280" path="res://game_over.svg" id="4_ejwbb"]
 [ext_resource type="Texture2D" uid="uid://bvki0j2q7yr1j" path="res://home.svg" id="5_7ki0s"]
+[ext_resource type="AudioStream" uid="uid://s6ytsdtal6ag" path="res://Audio/GameOver.wav" id="5_v4qw4"]
 [ext_resource type="Texture2D" uid="uid://xsigms2u5fpx" path="res://retry.svg" id="6_x6p1p"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1bya2"]
@@ -64,6 +65,9 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("6_x6p1p")
+
+[node name="GameoverSound" type="AudioStreamPlayer" parent="." unique_id=1978462362]
+stream = ExtResource("5_v4qw4")
 
 [connection signal="pressed" from="GOButton/HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="pressed" from="GOButton/RetryButton" to="." method="_on_retry_button_pressed"]
