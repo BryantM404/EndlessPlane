@@ -6,15 +6,22 @@ const SPEED = 300.0
 var health: float = 100.0
 var max_health: float = 100.0	
 
+# Peluru
+var ammo: int = 30          
+var max_ammo: int = 30
+
 var is_shield_active: bool = false
 var shield_timer: Timer 
 
+@onready var ammo_label = get_tree().current_scene.find_child("AmmoLabel", true, false)
 @onready var health_bar = get_tree().current_scene.find_child("HealthBar", true, false)
 
 func _ready() -> void:
 	if health_bar:
 		health_bar.value = health
-		
+	
+	update_ammo_ui()
+	
 	shield_timer = Timer.new()
 	shield_timer.one_shot = true
 	shield_timer.wait_time = 10.0
@@ -39,7 +46,8 @@ func _physics_process(_delta: float) -> void:
 	position.y = clamp(position.y, 0, screen_size.y)
 
 func shoot():
-	if bullet_scene:
+	# Cek apakah masih punya peluru
+	if ammo > 0 and bullet_scene:
 		var bullet = bullet_scene.instantiate()
 	
 		if has_node("Muzzle"):
@@ -48,7 +56,31 @@ func shoot():
 			bullet.global_position = global_position + Vector2(80, 0)
 			
 		get_tree().current_scene.add_child(bullet)
+		
+		# Kurangi peluru dan update UI
+		ammo -= 1
+		update_ammo_ui()
+	else:
+		print("Peluru Habis!")
 
+func update_ammo_ui():
+	if ammo_label:
+		ammo_label.text = "Ammo: " + str(ammo) + " / " + str(max_ammo)
+		
+		var warna_baru: Color
+		
+		if ammo > 15:
+			warna_baru = Color.GREEN  
+		elif ammo >= 7:
+			warna_baru = Color.ORANGE 
+		else:
+			warna_baru = Color.RED    
+		
+		if ammo_label.label_settings:
+			ammo_label.label_settings.font_color = warna_baru
+		else:
+			ammo_label.add_theme_color_override("font_color", warna_baru)
+		
 func take_damage(damage_value):
 	if is_shield_active:
 		is_shield_active = false
@@ -79,6 +111,10 @@ func apply_powerup(type):
 		health = min(health + (max_health * 0.15), max_health)
 		if health_bar: health_bar.value = health
 		_flash_effect(Color.GREEN)
+	elif type == 3: 
+		ammo = min(ammo + 20, max_ammo) 
+		update_ammo_ui()
+		_flash_effect(Color.RED) 
 
 func _on_shield_timeout():
 	is_shield_active = false

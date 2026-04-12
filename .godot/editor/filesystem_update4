@@ -3,4 +3,12 @@ res://plane_character.tscn
 res://main.gd
 res://plane_character.gd
 res://Bomb.tscn
+res://Bullet.tscn
+res://kamikaze.gd
+res://background_opening.gd
+res://game_over_scene.tscn
+res://kamikaze.tscn
 res://background_winternight.tscn
+res://background_moon.tscn
+res://power_up.tscn
+res://power_up.gd

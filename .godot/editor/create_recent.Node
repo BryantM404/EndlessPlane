@@ -1,10 +1,10 @@
+Label
 Marker2D
 Node2D
 AnimationPlayer
 TextureButton
 TextureRect
 CanvasLayer
-Label
 ProgressBar
 Timer
 CollisionShape2D

@@ -16,6 +16,8 @@ bg_color = Color(0.033526532, 0.69935167, 0.5801007, 1)
 font = ExtResource("5_jnlp7")
 font_size = 60
 
+[sub_resource type="FontVariation" id="FontVariation_bf3um"]
+
 [node name="root" type="Node2D" unique_id=1356577732 node_paths=PackedStringArray("spawn_timer")]
 script = ExtResource("1_vvh5c")
 kamikaze_scene = ExtResource("2_28aoi")
@@ -59,5 +61,13 @@ label_settings = SubResource("LabelSettings_l8v81")
 
 [node name="Transition" parent="CanvasLayer" unique_id=637614657 instance=ExtResource("10_tw3kd")]
 position = Vector2(499, -46)
+
+[node name="AmmoLabel" type="Label" parent="CanvasLayer" unique_id=1784211750]
+offset_left = 1020.0
+offset_top = 612.0
+offset_right = 1100.0
+offset_bottom = 635.0
+theme_override_fonts/font = SubResource("FontVariation_bf3um")
+horizontal_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

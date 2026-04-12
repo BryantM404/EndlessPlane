@@ -1,12 +1,12 @@
 extends Area2D
 
-enum PowerType {SHIELD, MULTIPLIER, HEAL}
+enum PowerType {SHIELD, MULTIPLIER, HEAL, AMMO}
 var my_type = PowerType
 var SPEED = 200.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var types = [PowerType.SHIELD, PowerType.MULTIPLIER, PowerType.HEAL]
+	var types = [PowerType.SHIELD, PowerType.MULTIPLIER, PowerType.HEAL, PowerType.AMMO]
 	my_type = types.pick_random()
 	#test powerup yang nyala
 	if my_type == PowerType.SHIELD:
@@ -15,6 +15,8 @@ func _ready() -> void:
 		modulate = Color(1, 1, 0) # score x2
 	elif my_type == PowerType.HEAL:
 		modulate = Color(0, 1, 0) # nyawa +15
+	elif my_type == PowerType.AMMO:
+		modulate = Color(1, 0, 0)    # MERAH (Sesuai permintaanmu)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
