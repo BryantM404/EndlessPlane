@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c6c10rdy0peav"]
+
+[ext_resource type="Texture2D" uid="uid://dw7ebtaarkikj" path="res://assetpack (BG & Ship)/parallax/moon/moon_sky.png" id="1_140ng"]
+[ext_resource type="Texture2D" uid="uid://c4x3uimd5ykmd" path="res://assetpack (BG & Ship)/parallax/moon/moon_earth.png" id="2_ye37e"]
+[ext_resource type="Texture2D" uid="uid://c62cavf2rdgqd" path="res://assetpack (BG & Ship)/parallax/moon/moon_back.png" id="3_hdxp0"]
+[ext_resource type="Texture2D" uid="uid://byscnvh5umvrb" path="res://assetpack (BG & Ship)/parallax/moon/moon_mid.png" id="4_of4d2"]
+[ext_resource type="Texture2D" uid="uid://cncd2tqm33ilu" path="res://assetpack (BG & Ship)/parallax/moon/moon_front.png" id="5_cfeq4"]
+[ext_resource type="Texture2D" uid="uid://doxiy6u0hb0kt" path="res://assetpack (BG & Ship)/parallax/moon/moon_floor.png" id="6_7jupy"]
+
+[node name="BackgroundMoon" type="Node2D" unique_id=642184175]
+metadata/_edit_horizontal_guides_ = [647.0]
+metadata/_edit_vertical_guides_ = [1153.0]
+
+[node name="Layer1" type="Parallax2D" parent="." unique_id=142435586]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1152, 0)
+
+[node name="MoonSky" type="Sprite2D" parent="Layer1" unique_id=1351511857]
+position = Vector2(578.5, 321.5)
+scale = Vector2(0.6089474, 0.64300007)
+texture = ExtResource("1_140ng")
+
+[node name="Layer2" type="Parallax2D" parent="." unique_id=1072801453]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1152, 0)
+
+[node name="MoonEarth" type="Sprite2D" parent="Layer2" unique_id=44273175]
+position = Vector2(1154.25, 326.5)
+scale = Vector2(0.6088158, 0.64099985)
+texture = ExtResource("2_ye37e")
+
+[node name="Layer3" type="Parallax2D" parent="." unique_id=1207792764]
+scroll_scale = Vector2(0.7, 0.7)
+repeat_size = Vector2(1152, 0)
+
+[node name="MoonBack" type="Sprite2D" parent="Layer3" unique_id=695281611]
+position = Vector2(577, 252)
+scale = Vector2(0.30157894, 0.642)
+texture = ExtResource("3_hdxp0")
+
+[node name="Layer4" type="Parallax2D" parent="." unique_id=882870725]
+scroll_scale = Vector2(0.8, 0.8)
+repeat_size = Vector2(1152, 0)
+
+[node name="MoonMid" type="Sprite2D" parent="Layer4" unique_id=163412384]
+position = Vector2(575, 325.00003)
+scale = Vector2(0.30184212, 0.648)
+texture = ExtResource("4_of4d2")
+
+[node name="Layer5" type="Parallax2D" parent="." unique_id=445532146]
+repeat_size = Vector2(1152, 0)
+
+[node name="MoonFront" type="Sprite2D" parent="Layer5" unique_id=530201821]
+position = Vector2(575, 326)
+scale = Vector2(0.30315787, 0.645)
+texture = ExtResource("5_cfeq4")
+
+[node name="Layer6" type="Parallax2D" parent="." unique_id=1328435430]
+scroll_scale = Vector2(1.5, 1.5)
+repeat_size = Vector2(1152, 0)
+
+[node name="MoonFloor" type="Sprite2D" parent="Layer6" unique_id=1424892048]
+position = Vector2(577.99994, 329)
+scale = Vector2(0.60473686, 0.639)
+texture = ExtResource("6_7jupy")

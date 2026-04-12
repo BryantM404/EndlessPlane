@@ -6,9 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://uknvqwsuxrth" path="res://plane_character.tscn" id="2_pyidc"]
 [ext_resource type="PackedScene" uid="uid://c37cdgqn0ufs4" path="res://power_up.tscn" id="3_l8v81"]
 [ext_resource type="PackedScene" uid="uid://dwr82eg52cda1" path="res://Bomb.tscn" id="4_bf3um"]
-[ext_resource type="PackedScene" uid="uid://cdw4efujmk5fh" path="res://background_forest.tscn" id="4_l8v81"]
 [ext_resource type="FontFile" uid="uid://bi84s2pjfs27y" path="res://7pxMONOkeychain.ttf" id="5_jnlp7"]
-[ext_resource type="PackedScene" uid="uid://4x0jautud0xl" path="res://background_skies.tscn" id="7_huihk"]
 [ext_resource type="PackedScene" uid="uid://cpopl13tjsj8b" path="res://transition.tscn" id="10_tw3kd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28aoi"]
@@ -26,12 +24,6 @@ bomb_scene = ExtResource("4_bf3um")
 spawn_timer = NodePath("Timer")
 
 [node name="BackgroundParis" parent="." unique_id=369285263 instance=ExtResource("1_pq8q7")]
-visible = false
-
-[node name="BackgroundForest" parent="." unique_id=341861924 instance=ExtResource("4_l8v81")]
-visible = false
-
-[node name="BackgroundSkies" parent="." unique_id=1890985120 instance=ExtResource("7_huihk")]
 visible = false
 
 [node name="BackgroundContainer" type="Node2D" parent="." unique_id=36281258]

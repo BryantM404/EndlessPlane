@@ -13,6 +13,7 @@ var backgrounds = [
 	preload("res://background_forest.tscn"),
 	preload("res://background_winternight.tscn"),
 	preload("res://background_skies.tscn"),
+	preload("res://background_moon.tscn"),
 ]
 var current_bg = null
 var bg_state = -1
@@ -158,6 +159,11 @@ func update_background(score):
 		new_state = 2
 	elif score < 40000:
 		new_state = 3
+	elif score < 50000:
+		new_state = 4
+	else:
+		new_state = 4
+	
 	if new_state != bg_state:
 		bg_state = new_state
 		if new_state != 0:
