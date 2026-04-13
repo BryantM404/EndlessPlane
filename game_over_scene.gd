@@ -2,9 +2,12 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 
-# AI assisted mulai
 func _ready():
+	# Other mulai
 	$GameoverSound.play()
+	# Other akhir
+	
+	# AI assisted mulai
 	$GOButton/HomeButton.pressed.connect(_on_home_button_pressed)
 	$GOButton/RetryButton.pressed.connect(_on_retry_button_pressed)
 

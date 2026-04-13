@@ -1,3 +1,7 @@
+CanvasLayer
+CanvasGroup
+ColorRect
+Sprite2D
 Label
 AudioStreamPlayer
 AudioStreamPlayer2D
@@ -6,9 +10,5 @@ Node2D
 AnimationPlayer
 TextureButton
 TextureRect
-CanvasLayer
 ProgressBar
 Timer
-CollisionShape2D
-Area2D
-AnimatedSprite2D

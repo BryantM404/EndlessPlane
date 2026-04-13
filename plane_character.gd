@@ -24,12 +24,13 @@ func _ready() -> void:
 	# Human akhir
 	
 	update_ammo_ui()
-	
+	# AI assisted mulai
 	shield_timer = Timer.new()
 	shield_timer.one_shot = true
 	shield_timer.wait_time = 10.0
 	shield_timer.timeout.connect(_on_shield_timeout)
 	add_child(shield_timer)
+	# AI assisted akhir
 
 # AI Fixed mulai
 func _physics_process(_delta: float) -> void:
@@ -70,7 +71,7 @@ func shoot():
 		
 func update_ammo_ui():
 	if ammo_label:
-		ammo_label.text = "Ammo: " + str(ammo) + " / " + str(max_ammo)
+		ammo_label.text = str(ammo) + " / " + str(max_ammo)
 		
 		var warna_baru: Color
 		
@@ -106,9 +107,11 @@ func take_damage(damage_value):
 			die()
 	# AI fixed akhir
 
+# AI generated mulai
 func _flash_effect(flash_color: Color):
 	modulate = flash_color
 	get_tree().create_timer(0.1).timeout.connect(func(): modulate = Color.WHITE)
+# AI generated akhir
 
 func apply_powerup(type):
 	# Other mulai
@@ -142,6 +145,7 @@ func _on_shield_timeout():
 	# AI fixed mulai
 	is_shield_active = false
 	modulate = Color.WHITE
+	emit_signal("show_powerup_text", "SHIELD EXPIRED!") 
 	# AI fixed akhir
 
 # AI assisted mulai

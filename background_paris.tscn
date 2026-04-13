@@ -144,5 +144,6 @@ scale = Vector2(0.20236844, 0.17944445)
 texture = ExtResource("3_hrl2v")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1106724986]
+visible = false
 position = Vector2(575, 325)
 script = ExtResource("19_qtnyd")
