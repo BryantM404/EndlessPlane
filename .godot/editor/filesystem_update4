@@ -1,3 +1,10 @@
 res://root.tscn
 res://main.gd
 res://plane_character.gd
+res://camera_2d.gd
+res://game_over_scene.gd
+res://power_up.gd
+res://background_opening.gd
+res://kamikaze.gd
+res://bomb.gd
+res://bullet.gd

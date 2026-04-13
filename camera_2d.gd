@@ -8,6 +8,8 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+# AI generated mulai
 func _process(delta: float) -> void:
 	position.x += speed * delta
 	pass
+# AI generated akhir

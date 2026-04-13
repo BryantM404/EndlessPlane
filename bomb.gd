@@ -4,17 +4,22 @@ var is_exploded = false
 
 @onready var anim = $AnimatedSprite2D
 
+# Human Mulai
 func _ready():
 	if anim.sprite_frames.has_animation("default"):
 		anim.play("default")
+# Human Akhir
 
+# AI Generated Mulai
 func _process(delta):
 	if not is_exploded:
 		position.y += speed * delta
-	
+
 	if position.y > get_viewport_rect().size.y + 100:
 		queue_free()
+# AI Gemerated Akhir
 
+# Human Mulai
 func _on_body_entered(body):
 	if body.is_in_group("player") or body.name == "Player":
 		if not is_exploded:
@@ -22,7 +27,9 @@ func _on_body_entered(body):
 				body.take_damage(5)
 			
 			explode()
+# Human Akhir
 
+#AI Generated Mulai
 func explode():
 	is_exploded = true
 	$CollisionShape2D.call_deferred("set_disabled", true)
@@ -31,5 +38,7 @@ func explode():
 		anim.play("explosion")
 		await anim.animation_finished
 	queue_free()
+	
 func set_speed(new_speed):
 	speed = new_speed
+#AI Generated Akhir

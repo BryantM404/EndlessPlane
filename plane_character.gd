@@ -18,8 +18,10 @@ var shield_timer: Timer
 signal show_powerup_text(text)
 
 func _ready() -> void:
+	# Human mulai
 	if health_bar:
 		health_bar.value = health
+	# Human akhir
 	
 	update_ammo_ui()
 	
@@ -29,6 +31,7 @@ func _ready() -> void:
 	shield_timer.timeout.connect(_on_shield_timeout)
 	add_child(shield_timer)
 
+# AI Fixed mulai
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		shoot()
@@ -45,7 +48,9 @@ func _physics_process(_delta: float) -> void:
 	
 	var screen_size = get_viewport_rect().size
 	position.y = clamp(position.y, 0, screen_size.y)
+# AI fixed selesai
 
+# AI Generated Mulai
 func shoot():
 	if ammo > 0 and bullet_scene:
 		$ShootSound.play()
@@ -62,7 +67,7 @@ func shoot():
 		update_ammo_ui()
 	else:
 		emit_signal("show_powerup_text", "NO AMMO")
-
+		
 func update_ammo_ui():
 	if ammo_label:
 		ammo_label.text = "Ammo: " + str(ammo) + " / " + str(max_ammo)
@@ -80,9 +85,14 @@ func update_ammo_ui():
 			ammo_label.label_settings.font_color = warna_baru
 		else:
 			ammo_label.add_theme_color_override("font_color", warna_baru)
+#AI Generated Akhir
 		
 func take_damage(damage_value):
+	# Other mulai
 	$HitSound.play()
+	# Other akhir
+	
+	# AI fixed mulai
 	if is_shield_active:
 		is_shield_active = false
 		shield_timer.stop()
@@ -94,13 +104,18 @@ func take_damage(damage_value):
 		_flash_effect(Color.RED)
 		if health <= 0:
 			die()
+	# AI fixed akhir
 
 func _flash_effect(flash_color: Color):
 	modulate = flash_color
 	get_tree().create_timer(0.1).timeout.connect(func(): modulate = Color.WHITE)
 
 func apply_powerup(type):
+	# Other mulai
 	$PowerupSound.play()
+	# Other akhir
+	
+	# AI assisted mulai
 	if type == 0: # SHIELD
 		is_shield_active = true
 		shield_timer.start()
@@ -121,11 +136,16 @@ func apply_powerup(type):
 		update_ammo_ui()
 		_flash_effect(Color.RED)
 		emit_signal("show_powerup_text", "AMMO +5") 
+	# AI assisted akhir
 
 func _on_shield_timeout():
+	# AI fixed mulai
 	is_shield_active = false
 	modulate = Color.WHITE
+	# AI fixed akhir
 
+# AI assisted mulai
 func die():
 	var game = get_tree().get_first_node_in_group("game")
 	game.show_game_over()
+# AI assisted akhir

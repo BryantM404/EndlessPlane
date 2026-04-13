@@ -10,10 +10,12 @@ var exploded := false
 
 @onready var anim = $Area2D/AnimatedSprite2D
 
+# Human Mulai
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	anim.play("default")
-	
+# Human Akhir
+# AI Generated Mulai	
 func _physics_process(delta):
 	if exploded:
 		return
@@ -29,13 +31,18 @@ func _physics_process(delta):
 			direction = direction
 	if position.x < -100:
 		queue_free()
-
+#AI Generated Akhir
+	
+# Human Mulai
 func _on_area_2d_body_entered(body: Node2D):
 	if body.is_in_group("player"):
 		if body.has_method("take_damage"):
 			body.take_damage(10)
 		explode()
-		
+
+# Human Akhir
+
+# AI Generated Mulai	
 func explode():
 	if exploded:
 		return
@@ -54,3 +61,4 @@ func explode():
 
 	await anim.animation_finished
 	queue_free()
+# AI Generated Akhir
