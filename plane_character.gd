@@ -61,7 +61,7 @@ func shoot():
 		ammo -= 1
 		update_ammo_ui()
 	else:
-		print("Peluru Habis!")
+		emit_signal("show_powerup_text", "NO AMMO")
 
 func update_ammo_ui():
 	if ammo_label:
@@ -117,10 +117,10 @@ func apply_powerup(type):
 		_flash_effect(Color.GREEN)
 		emit_signal("show_powerup_text", "HEAL +15%")
 	elif type == 3: # AMMO
-		ammo = min(ammo + 20, max_ammo) 
+		ammo = min(ammo + 5, max_ammo) 
 		update_ammo_ui()
 		_flash_effect(Color.RED)
-		emit_signal("show_powerup_text", "AMMO +20") 
+		emit_signal("show_powerup_text", "AMMO +5") 
 
 func _on_shield_timeout():
 	is_shield_active = false
