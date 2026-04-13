@@ -158,4 +158,4 @@ stream = ExtResource("6_ke7bx")
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="." unique_id=266808263]
 stream = ExtResource("7_qdklc")
-volume_db = -10.0
+volume_db = -20.0
