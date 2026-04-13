@@ -6,7 +6,6 @@ const SPEED = 300.0
 var health: float = 100.0
 var max_health: float = 100.0	
 
-# Peluru
 var ammo: int = 30          
 var max_ammo: int = 30
 
@@ -48,7 +47,6 @@ func _physics_process(_delta: float) -> void:
 	position.y = clamp(position.y, 0, screen_size.y)
 
 func shoot():
-	# Cek apakah masih punya peluru
 	if ammo > 0 and bullet_scene:
 		$ShootSound.play()
 		var bullet = bullet_scene.instantiate()
@@ -60,7 +58,6 @@ func shoot():
 			
 		get_tree().current_scene.add_child(bullet)
 		
-		# Kurangi peluru dan update UI
 		ammo -= 1
 		update_ammo_ui()
 	else:

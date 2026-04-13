@@ -24,7 +24,6 @@ var score_multiplier: float = 1.0
 var multiplier_timer: Timer
 
 var game_over_scene = preload('res://game_over_scene.tscn')
-#var game_over_ui = null
 
 func _ready():
 	Engine.time_scale = 1
@@ -184,5 +183,14 @@ func show_game_over():
 func _on_plane_show_powerup_text(text: Variant) -> void:
 	$CanvasLayer/InfoLabel.text = text
 	$CanvasLayer/InfoLabel.show()
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(0.3).timeout
 	$CanvasLayer/InfoLabel.hide()
+	await get_tree().create_timer(0.3).timeout
+	$CanvasLayer/InfoLabel.show()
+	await get_tree().create_timer(0.3).timeout
+	$CanvasLayer/InfoLabel.hide()
+	await get_tree().create_timer(0.3).timeout
+	$CanvasLayer/InfoLabel.show()
+	await get_tree().create_timer(0.5).timeout
+	$CanvasLayer/InfoLabel.hide()
+	
