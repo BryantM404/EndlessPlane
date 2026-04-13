@@ -6,6 +6,7 @@ var SPEED = 200.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# AI assisted mulai
 	var types = [PowerType.SHIELD, PowerType.MULTIPLIER, PowerType.HEAL, PowerType.AMMO]
 	my_type = types.pick_random()
 	if my_type == PowerType.SHIELD:
@@ -17,17 +18,23 @@ func _ready() -> void:
 	elif my_type == PowerType.AMMO:
 		modulate = Color(1, 0, 0) # ammo
 	pass
+	# AI assisted akhir
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# Human mulai
 	position.x -= SPEED * delta
-	
+	# Human akhir
+	# AI assisted mulai
 	if position.x < -100:
 		queue_free()
 	pass
+	# AI assisted mulai
 
 func _on_body_entered(body: Node2D) -> void:
+	# Human mulai
 	if body.name == "Player" or body.is_in_group("player"):
 		body.apply_powerup(my_type) 
 		queue_free() 
+	# Human akhir
 	pass

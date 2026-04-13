@@ -1,7 +1,8 @@
 extends Area2D
-
+# AI Generated Mulai
 @export var speed: float = 800.0
 @export var lifetime: float = 2.0 
+
 
 func _ready() -> void:
 	await get_tree().create_timer(lifetime).timeout
@@ -9,7 +10,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	position.x += speed * delta
+# AI Generated Akhir
 
+# AI Assisted Mulai
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player") or area.name == "Bullet":
 		return
@@ -30,6 +33,9 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("kamikaze"):
 		handle_hit(body)
 
+# AI Assisted Akhir
+
+# AI Generated Mulai
 func handle_hit(victim):
 	if is_queued_for_deletion():
 		return
@@ -39,3 +45,4 @@ func handle_hit(victim):
 	else:
 		victim.queue_free()
 	queue_free()
+#AI Generated Akhir

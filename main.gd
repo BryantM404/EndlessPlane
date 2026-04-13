@@ -7,6 +7,7 @@ extends Node2D
 @export var margin_y : float = 40.0
 @export var margin_x_bomb : float = 50.0
 
+# AI assisted mulai
 @onready var bg_container = $BackgroundContainer
 var backgrounds = [
 	preload("res://background_paris.tscn"),
@@ -18,6 +19,7 @@ var backgrounds = [
 var current_bg = null
 var bg_state = -1
 var transition_scene = preload("res://transition.tscn")
+# AI assisted akhir
 
 var score: float = 0.0
 var score_multiplier: float = 1.0
@@ -28,20 +30,22 @@ var game_over_scene = preload('res://game_over_scene.tscn')
 func _ready():
 	Engine.time_scale = 1
 	spawn_timer.start()
+	# Human mulai
 	$CanvasLayer/ScoreLabel.text = "0"
+	# Human akhir
 	
+	# AI generated mulai
 	change_background(0)
 	bg_state = 0
 	add_to_group("game")
+	# AI generated akhir
 		
-	# Timer untuk durasi Power-Up
 	multiplier_timer = Timer.new()
 	multiplier_timer.one_shot = true
 	multiplier_timer.wait_time = 10.0
 	multiplier_timer.timeout.connect(_on_multiplier_timeout)
 	add_child(multiplier_timer)
 	
-	# Timer untuk munculin Power-Up
 	var powerup_spawner = Timer.new()
 	powerup_spawner.wait_time = 15.0 
 	powerup_spawner.autostart = true
@@ -50,23 +54,30 @@ func _ready():
 	
 	
 func _process(delta: float) -> void:
+	# AI fixed mulai
 	score += (200 * score_multiplier) * delta
+	# AI fixed akhir 
+	
+	# Human mulai
 	$CanvasLayer/ScoreLabel.text = str(int(score))
 	update_background(score)
-	
+	# Human akhir
+
+# AI assisted mulai
 func activate_score_multiplier():
 	score_multiplier = 2.0
 	multiplier_timer.start()
 	
 func _on_multiplier_timeout():
 	score_multiplier = 1.0
-
+# AI assisted akhir
 func _on_timer_timeout():
 	if randf() > 0.3:
 		spawn_enemy()
 	else:
 		spawn_bomb()
 
+#AI Generated Mulai
 func spawn_enemy():
 	var enemy = kamikaze_scene.instantiate()
 	get_tree().current_scene.add_child(enemy)
@@ -92,6 +103,7 @@ func spawn_enemy():
 	var spawn_x = get_viewport_transform().affine_inverse().origin.x + screen_size.x + margin_x
 	enemy.global_position = Vector2(spawn_x, y_new)
 	enemy.add_to_group("kamikaze")
+
 
 func spawn_bomb():
 	if bomb_scene == null: return
@@ -121,7 +133,9 @@ func spawn_bomb():
 	bomb.global_position = Vector2(x_new, -100.0) 
 	bomb.z_index = 10
 	bomb.add_to_group("bombs")
-		
+# AI Generated Akhir
+
+# AI generated mulai
 func _on_powerup_spawn():
 	if powerup_scene == null: return
 		
@@ -135,19 +149,22 @@ func _on_powerup_spawn():
 	var spawn_x = get_viewport_transform().affine_inverse().origin.x + screen_size.x + margin_x
 	
 	pu.global_position = Vector2(spawn_x, y_new)
+# AI generated akhir 
 
 func kurangi_skor(jumlah: int):
 	score -= jumlah
 	if score < 0: score = 0
 	
-	
+# AI generated mulai
 func change_background(index):
 	if current_bg:
 		current_bg.queue_free()
 	
 	current_bg = backgrounds[index].instantiate()
 	bg_container.add_child(current_bg)
+# AI generated akhir
 
+# AI assisted mulai
 func update_background(score):
 	var new_state = 0
 	if score < 10000:
@@ -169,8 +186,9 @@ func update_background(score):
 			$CanvasLayer/Transition/AnimationPlayer.play("transition")
 			await get_tree().create_timer(0.45).timeout
 		change_background(bg_state)
+# AI assisted akhir
 
-		
+# Other mulai
 func show_game_over():
 	if has_node("BGMPlayer"):
 		$BGMPlayer.stop()
@@ -178,8 +196,9 @@ func show_game_over():
 	
 	var ui = game_over_scene.instantiate()
 	$CanvasLayer.add_child(ui)
+# Other akhir
 
-
+# Human mulai
 func _on_plane_show_powerup_text(text: Variant) -> void:
 	$CanvasLayer/InfoLabel.text = text
 	$CanvasLayer/InfoLabel.show()
@@ -193,4 +212,5 @@ func _on_plane_show_powerup_text(text: Variant) -> void:
 	$CanvasLayer/InfoLabel.show()
 	await get_tree().create_timer(0.5).timeout
 	$CanvasLayer/InfoLabel.hide()
+# Human akhir
 	
